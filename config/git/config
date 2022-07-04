@@ -1,0 +1,9 @@
+[user]
+  name = Stefan Radziuk
+  email = stefan.radziuk19@imperial.ac.uk
+[safe]
+  directory = /home/stefan/nixpkgs
+[pull]
+  ff = only
+[init]
+  defaultBranch = main

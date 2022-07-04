@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   nixpkgs.config = import ./nixpkgs-config.nix;
+
+  home.stateVersion = "21.11";
+
+  programs.home-manager.enable = true;
 
   home.packages = with pkgs; (
     let
@@ -40,4 +44,20 @@
       # (import ./my-pkgs/autorandr-rs.nix)
     ]
   );
+
+  xdg.configFile = let
+    mapToAttrs = f: list: builtins.listToAttrs (map f list);
+
+    removePathPrefix = prefix: path: ".${lib.removePrefix (toString prefix) (toString path)}";
+
+    pathToXdgAttr = path: {
+      name = removePathPrefix ./config path;
+      value = {
+        source = path;
+      };
+    };
+
+    configPaths = lib.filesystem.listFilesRecursive ./config;
+
+  in mapToAttrs pathToXdgAttr configPaths;
 }
