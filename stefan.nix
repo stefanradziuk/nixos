@@ -1,9 +1,26 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+let
+  mapDir = dir: let
+    mapToAttrs = f: list: builtins.listToAttrs (map f list);
+
+    removePathPrefix = prefix: path: ".${lib.removePrefix (toString prefix) (toString path)}";
+
+    pathToXdgAttr = path: {
+      name = removePathPrefix dir path;
+      value = {
+        source = path;
+      };
+    };
+
+    paths = lib.filesystem.listFilesRecursive dir;
+  in mapToAttrs pathToXdgAttr paths;
+
+in {
   nixpkgs.config = import ./nixpkgs-config.nix;
 
-  home.stateVersion = "21.11";
-
   programs.home-manager.enable = true;
+
+  home.stateVersion = "21.11";
 
   home.packages = with pkgs; (
     let
@@ -46,19 +63,6 @@
     ]
   );
 
-  xdg.configFile = let
-    mapToAttrs = f: list: builtins.listToAttrs (map f list);
-
-    removePathPrefix = prefix: path: ".${lib.removePrefix (toString prefix) (toString path)}";
-
-    pathToXdgAttr = path: {
-      name = removePathPrefix ./config path;
-      value = {
-        source = path;
-      };
-    };
-
-    configPaths = lib.filesystem.listFilesRecursive ./config;
-
-  in mapToAttrs pathToXdgAttr configPaths;
+  xdg.configFile = mapDir ./config;
+  home.file = mapDir ./home-dots;
 }
