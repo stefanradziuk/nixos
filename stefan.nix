@@ -13,8 +13,11 @@
       acpilight
       cinnamon.nemo
       dunst
+      exfat
+      firefox
       gh
       google-chrome-beta
+      gparted
       imagemagick
       kitty
       rofi

@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 let
-  useXserver = false;
+  useXserver = true;
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -85,9 +85,6 @@ in {
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       gammastep
-      # wl-gammarelay
-      # wlsunset
-      # redshift-wlr
       clipman
       font-awesome
       glib
@@ -102,6 +99,10 @@ in {
       wl-clipboard
     ];
   };
+
+  programs.nm-applet.enable = true;
+
+  services.logind.lidSwitch = "ignore";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -131,9 +132,9 @@ in {
       python3 = pkgs.python3.withPackages (python-packages:
         with python-packages; [
           numpy
+          i3ipc
         ] ++ (if useXserver then [
           i3-py
-          i3ipc
         ] else [])
       );
 
@@ -184,6 +185,12 @@ in {
   # };
   programs.zsh.enable = true;
   programs.light.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   fonts.fonts = with pkgs; [
     corefonts  # Microsoft fonts
