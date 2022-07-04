@@ -80,27 +80,37 @@ in {
     libinput.enable = true;
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [
-      gammastep
-      clipman
-      font-awesome
-      glib
-      grim
-      lxappearance
-      slurp
-      sway-contrib.grimshot
-      swayidle
-      swaylock-effects
-      waybar
-      wev
-      wl-clipboard
-    ];
-  };
+  programs = {
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [
+        gammastep
+        clipman
+        font-awesome
+        glib
+        grim
+        lxappearance
+        slurp
+        sway-contrib.grimshot
+        swayidle
+        swaylock-effects
+        waybar
+        wev
+        wl-clipboard
+      ];
+    };
 
-  programs.nm-applet.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
+
+    light.enable = true;
+    nm-applet.enable = true;
+    zsh.enable = true;
+  };
 
   services.logind.lidSwitch = "ignore";
 
@@ -175,22 +185,6 @@ in {
       xbindkeys
     ] else [])
   );
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-  programs.zsh.enable = true;
-  programs.light.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
 
   fonts.fonts = with pkgs; [
     corefonts  # Microsoft fonts
