@@ -16,6 +16,7 @@
     in [
       acpilight
       cinnamon.nemo
+      diff-so-fancy
       dunst
       exfat
       firefox
