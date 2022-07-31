@@ -61,6 +61,16 @@ if [ -n "${commands[fzf-share]}" ]; then
 
   # open fzf in a tmux pane
   export FZF_TMUX_OPTS=-p
+
+  # TODO set up a .ignore file
+  export FZF_CTRL_T_COMMAND='ag -l \
+    --ignore .local \
+    --ignore .steam \
+    --ignore .cache \
+    --ignore .cargo \
+    --nocolor \
+    --hidden \
+    -g ""'
 fi
 
 source "$HOME/.secrets"

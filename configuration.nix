@@ -171,6 +171,7 @@ in {
       pulsemixer
       python3
       ripgrep
+      silver-searcher
       surfraw
       tmux
       tree
