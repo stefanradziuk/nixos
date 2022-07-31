@@ -16,6 +16,11 @@ Plug 'ARM9/arm-syntax-vim'
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'LnL7/vim-nix'
 
+" telescope + deps
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 " Initialize plugin system
 call plug#end()
 
@@ -179,6 +184,12 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPacka
 
 " }}}
 
+" treesitter
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " }}}
 
 " set* {{{
@@ -200,7 +211,7 @@ set whichwrap=b,s,<,>,[,]
 " highlight trailing whitespace
 set list lcs=trail:~,extends:@,precedes:@,tab:\·\ 
 set display=lastline "@@@ on wrap
-set number relativenumber
+set number
 "set colorcolumn=80
 "set cursorline
 
@@ -237,6 +248,9 @@ vnoremap <silent><Leader>y "cy <Bar> :call system('xclip -selection clipboard', 
 :command! Q q
 :command! W w
 :command! Wq wq
+
+cabbrev tn     tabnew
+cabbrev Tabnew tabnew
 
 " }}}
 
@@ -296,7 +310,5 @@ autocmd FileType markdown syn match MarkdownIgnore "\$.*_.*\$"
 " }}}
 
 map Y yy
-
-:command Mailgen !cd /home/stefan/documents/docsoc/mailgen/ && ./mailgen.js %:p
 
 " vim:foldmethod=marker:foldlevel=0

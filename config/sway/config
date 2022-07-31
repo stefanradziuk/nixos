@@ -11,7 +11,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term st -e tmux
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -87,7 +87,7 @@ bindsym $mod+Return exec $term
 
 # Start a floating terminal
 for_window [title="floating_term"] floating enable
-bindsym $mod+Shift+Return exec $term --title floating_term
+bindsym $mod+Shift+Return exec $term -t floating_term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -97,6 +97,9 @@ bindsym $mod+d exec $menu
 
 # Surfraw
 bindsym $mod+g exec $HOME/bin/rofi_surfraw
+
+# Change gap size
+bindsym $mod+z exec $HOME/bin/rofi_gaps
 
 # Screen lock
 bindsym Mod1+k exec swaylock
@@ -122,21 +125,23 @@ exec_always blueman-applet
 
 # screenshot
 bindsym $mod+Shift+s exec grimshot copy window
-bindsym Print exec grimshot save window
+bindsym Print        exec XDG_SCREENSHOTS_DIR=$HOME/pictures/screenshots grimshot save window
 
 bindsym XF86AudioLowerVolume        exec pulsemixer --unmute --change-volume -5 && volume_notification
 bindsym XF86AudioRaiseVolume        exec pulsemixer --unmute --change-volume +5 && volume_notification
 bindsym XF86AudioMute               exec pulsemixer --toggle-mute && volume_notification
 
-bindsym Ctrl+XF86AudioLowerVolume   exec xbacklight -5 -fps 60
-bindsym Ctrl+XF86AudioRaiseVolume   exec xbacklight +5 -fps 60
+bindsym Ctrl+XF86AudioLowerVolume       exec xbacklight -5  -fps 60
+bindsym Ctrl+XF86AudioRaiseVolume       exec xbacklight +5  -fps 60
+bindsym Ctrl+Shift+XF86AudioLowerVolume exec xbacklight -25 -fps 60
+bindsym Ctrl+Shift+XF86AudioRaiseVolume exec xbacklight +25 -fps 60
 
-bindsym XF86MonBrightnessDown       exec xbacklight -5 -fps 60
-bindsym XF86MonBrightnessUp         exec xbacklight +5 -fps 60
-bindsym Ctrl+XF86MonBrightnessDown  exec xbacklight -1 -fps 60
-bindsym Ctrl+XF86MonBrightnessUp    exec xbacklight +1 -fps 60
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -25 -fps 60
-bindsym Shift+XF86MonBrightnessUp   exec xbacklight +25 -fps 60
+bindsym XF86MonBrightnessDown           exec xbacklight -5  -fps 60
+bindsym XF86MonBrightnessUp             exec xbacklight +5  -fps 60
+bindsym Ctrl+XF86MonBrightnessDown      exec xbacklight -1  -fps 60
+bindsym Ctrl+XF86MonBrightnessUp        exec xbacklight +1  -fps 60
+bindsym Shift+XF86MonBrightnessDown     exec xbacklight -25 -fps 60
+bindsym Shift+XF86MonBrightnessUp       exec xbacklight +25 -fps 60
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.

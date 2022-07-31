@@ -30,13 +30,21 @@ in {
           "--enable-features=WebUIDarkMode"
         ];
       };
+
+      st = pkgs.st.overrideAttrs (oldAttrs: rec {
+        configFile = ./st/config.def.h;
+        postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
+      });
+
     in [
       acpilight
       cinnamon.nemo
       diff-so-fancy
+      direnv
       dunst
       exfat
       firefox
+      fzf
       gh
       google-chrome-beta
       gparted
@@ -44,11 +52,18 @@ in {
       kitty
       rofi
       rofimoji
+      shellcheck
       slack
       spotify
+      st
       zathura
       zsh-prezto
       zsh-z
+
+      cargo
+      rust-analyzer
+      rustc
+      rustfmt
 
       # theming
       gnome-themes-extra

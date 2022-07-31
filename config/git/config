@@ -29,14 +29,11 @@
   new        = green bold
   whitespace = red reverse
 
-[color "diff-highlight"]
-  oldNormal    = red bold
-  oldHighlight = red bold 52
-  newNormal    = green bold
-  newHighlight = green bold 22
-
 [url "git@github.com:"]
   insteadOf = "gh:"
 
 [url "git@gitlab.doc.ic.ac.uk:"]
   insteadOf = "doc:"
+
+[alias]
+  patch = !git --no-pager diff --no-color

@@ -55,6 +55,14 @@ bindkey "^[[3^"	kill-word
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
 
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+
+  # open fzf in a tmux pane
+  export FZF_TMUX_OPTS=-p
+fi
+
 source "$HOME/.secrets"
 
 gi() {

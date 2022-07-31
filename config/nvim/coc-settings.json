@@ -63,6 +63,11 @@
           "formattingProvider": "stylish-haskell"
         }
       }
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
     }
   },
   "python.formatting.provider": "black",

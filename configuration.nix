@@ -142,6 +142,7 @@ in {
       python3 = pkgs.python3.withPackages (python-packages:
         with python-packages; [
           numpy
+          ipython
           i3ipc
         ] ++ (if useXserver then [
           i3-py
@@ -157,6 +158,7 @@ in {
       exa
       fd
       feh
+      file
       git
       htop
       jq
