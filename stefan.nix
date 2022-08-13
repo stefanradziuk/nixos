@@ -85,6 +85,5 @@ in {
     ]
   );
 
-  xdg.configFile = mapDir ./config;
   home.file = mapDir ./home-dots;
 }
