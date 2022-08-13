@@ -65,6 +65,13 @@ in {
       rustc
       rustfmt
 
+      # TODO nix env for tex projects
+      (
+        texlive.combine {
+          inherit (texlive) scheme-medium titlesec fira fontaxes enumitem;
+        }
+      )
+
       # theming
       gnome-themes-extra
       gsettings-desktop-schemas
