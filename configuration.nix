@@ -31,10 +31,14 @@ in {
   boot.supportedFilesystems = [ "ntfs" ];
 
   # TODO factor out device specific settings
-  networking.hostName = "ellsemere"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking = {
+    hostName = "ellsemere";
+    # Pick only one of the below networking options.
+    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.dns = "none";
+    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
