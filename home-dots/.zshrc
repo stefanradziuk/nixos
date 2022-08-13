@@ -99,3 +99,19 @@ py() {
   python -c "print($*)"
 }
 
+unlink() {
+  FILE="$1"
+  TMP_FILE=$(mktemp)
+  cp $FILE $TMP_FILE
+  mv $TMP_FILE $FILE
+  chmod +w $FILE
+}
+
+tmpdir-shell() {
+  TMPDIR=$(mktemp -d)
+  (
+    cd $TMPDIR
+    zsh
+  )
+  rm -rf $TMP_FILE
+}
