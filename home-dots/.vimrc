@@ -245,9 +245,9 @@ vnoremap <silent><Leader>y "cy <Bar> :call system('xclip -selection clipboard', 
 " common typos {{{
 
 :nnoremap q: :q
-:command! Q q
-:command! W w
-:command! Wq wq
+cabbrev Q q
+cabbrev W w
+cabbrev Wq wq
 
 cabbrev tn     tabnew
 cabbrev Tabnew tabnew
