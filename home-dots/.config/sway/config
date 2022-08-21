@@ -113,9 +113,7 @@ bindsym Mod1+j exec $HOME/bin/rofi_powermenu
 # bindsym $mod+Shift+m exec $HOME/bin/rofi_dualmonitor_touch
 
 # rofi emoji picker
-# TODO set up rofimoji fork
-# bindsym $mod+Shift+n exec /home/stefan/programming/rofimoji/src/picker/rofimoji.py
-bindsym $mod+Shift+n exec rofimoji --action copy
+bindsym $mod+Shift+n exec rofimoji
 
 # persistent clipboard
 # TODO does not work

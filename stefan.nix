@@ -59,6 +59,7 @@ in {
         gparted
         imagemagick
         kitty
+        nodePackages.bash-language-server
         psst
         rofi
         rofimoji
@@ -67,6 +68,8 @@ in {
         spotify
         st
         texlive
+        wtype
+        xdotool
         youtube-dl
         zathura
         zsh-prezto

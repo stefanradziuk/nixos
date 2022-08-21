@@ -1,5 +1,5 @@
-action = clipboard
-skin-tone = ask
+action = copy
+skin-tone = neutral
 max-recent = 0
 prompt = 🐝
-# no-frecency = False
+no-frecency = false
