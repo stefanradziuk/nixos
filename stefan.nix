@@ -33,7 +33,9 @@ in {
 
       st = pkgs.st.overrideAttrs (oldAttrs: rec {
         configFile = ./st/config.def.h;
-        postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
+        postPatch = oldAttrs.postPatch + ''
+          cp ${configFile} config.def.h
+        '';
       });
 
     in [
@@ -50,12 +52,14 @@ in {
       gparted
       imagemagick
       kitty
+      psst
       rofi
       rofimoji
       shellcheck
       slack
       spotify
       st
+      youtube-dl
       zathura
       zsh-prezto
       zsh-z

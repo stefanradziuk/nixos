@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   useXserver = true;
@@ -193,6 +193,11 @@ in {
     ] else [])
   );
 
+  environment.sessionVariables = {
+    # Wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
   fonts.fonts = with pkgs; [
     corefonts  # Microsoft fonts
     fira-code
@@ -216,6 +221,10 @@ in {
   # networking.firewall.enable = false;
 
   nixpkgs.config = import ./nixpkgs-config.nix;
+
+  nix.settings = {
+    auto-optimise-store = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
