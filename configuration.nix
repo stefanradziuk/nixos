@@ -17,6 +17,7 @@ in {
 
   nix.settings = {
     auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
   };
 
   # This value determines the NixOS release from which the default
