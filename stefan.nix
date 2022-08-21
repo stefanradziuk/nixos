@@ -20,74 +20,74 @@ in {
 
   programs.home-manager.enable = true;
 
-  home.stateVersion = "21.11";
+  home = {
+    stateVersion = "21.11";
+    file = mapDir ./home-dots;
 
-  home.packages = with pkgs; (
-    let
-      google-chrome-beta = pkgs.google-chrome-beta.override {
-        commandLineArgs = [
-          "--force-dark-mode"
-          "--enable-features=WebUIDarkMode"
-        ];
-      };
+    packages = with pkgs; (
+      let
+        google-chrome-beta = pkgs.google-chrome-beta.override {
+          commandLineArgs = [
+            "--force-dark-mode"
+            "--enable-features=WebUIDarkMode"
+          ];
+        };
 
-      st = pkgs.st.overrideAttrs (oldAttrs: rec {
-        configFile = ./st/config.def.h;
-        postPatch = oldAttrs.postPatch + ''
-          cp ${configFile} config.def.h
-        '';
-      });
+        st = pkgs.st.overrideAttrs (oldAttrs: rec {
+          configFile = ./patches/st/config.def.h;
+          postPatch = oldAttrs.postPatch + ''
+            cp ${configFile} config.def.h
+          '';
+        });
 
-    in [
-      acpilight
-      cinnamon.nemo
-      diff-so-fancy
-      direnv
-      dunst
-      exfat
-      firefox
-      fzf
-      gh
-      google-chrome-beta
-      gparted
-      imagemagick
-      kitty
-      psst
-      rofi
-      rofimoji
-      shellcheck
-      slack
-      spotify
-      st
-      youtube-dl
-      zathura
-      zsh-prezto
-      zsh-z
+        # TODO nix env for tex projects
+        texlive = pkgs.texlive.combine {
+          inherit (pkgs.texlive) scheme-medium titlesec fira fontaxes enumitem;
+        };
 
-      cargo
-      rust-analyzer
-      rustc
-      rustfmt
+      in [
+        acpilight
+        cinnamon.nemo
+        diff-so-fancy
+        direnv
+        dunst
+        exfat
+        firefox
+        fzf
+        gh
+        google-chrome-beta
+        gparted
+        imagemagick
+        kitty
+        psst
+        rofi
+        rofimoji
+        shellcheck
+        slack
+        spotify
+        st
+        texlive
+        youtube-dl
+        zathura
+        zsh-prezto
+        zsh-z
 
-      # TODO nix env for tex projects
-      (
-        texlive.combine {
-          inherit (texlive) scheme-medium titlesec fira fontaxes enumitem;
-        }
-      )
+        cargo
+        rust-analyzer
+        rustc
+        rustfmt
 
-      # theming
-      gnome-themes-extra
-      gsettings-desktop-schemas
-      gtk-engine-murrine
-      gtk_engines
-      la-capitaine-icon-theme
-      lxappearance
-      phinger-cursors
-      # autorandr?
-      # (import ./my-pkgs/autorandr-rs.nix)
-    ]
-  );
-
-  home.file = mapDir ./home-dots;
+        # theming
+        gnome-themes-extra
+        gsettings-desktop-schemas
+        gtk-engine-murrine
+        gtk_engines
+        la-capitaine-icon-theme
+        lxappearance
+        phinger-cursors
+        # autorandr?
+        # (import ./my-pkgs/autorandr-rs.nix)
+      ]
+    );
+  };
 }

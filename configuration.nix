@@ -13,22 +13,38 @@ in {
       <home-manager/nixos>
     ];
 
+  nixpkgs.config = import ./nixpkgs-config.nix;
+
+  nix.settings = {
+    auto-optimise-store = true;
+  };
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "21.11"; # Did you read the comment?
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
   };
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      useOSProber = true;
-      device = "nodev";
-      efiSupport = true;
-      splashImage = /home/stefan/pictures/wallpapers/thonk.png;
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        useOSProber = true;
+        device = "nodev";
+        efiSupport = true;
+        splashImage = /home/stefan/pictures/wallpapers/thonk.png;
+      };
     };
-  };
 
-  boot.supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = [ "ntfs" ];
+  };
 
   # TODO factor out device specific settings
   networking = {
@@ -135,15 +151,16 @@ in {
     extraGroups = [ "wheel" "video" ];
   };
 
-  security.sudo.wheelNeedsPassword = false;
-
   home-manager.users.stefan = import ./stefan.nix;
+
+  security.sudo.wheelNeedsPassword = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; (
-    let
-      python3 = pkgs.python3.withPackages (python-packages:
+  environment = {
+    systemPackages = with pkgs; (
+      let
+        python3 = pkgs.python3.withPackages (python-packages:
         with python-packages; [
           numpy
           ipython
@@ -151,51 +168,52 @@ in {
         ] ++ (if useXserver then [
           i3-py
         ] else [])
-      );
+        );
 
-      polybar = pkgs.polybar.override {
-        i3GapsSupport = true;
-        pulseSupport = true;
-      };
-    in [
-      bat
-      exa
-      fd
-      feh
-      file
-      git
-      htop
-      jq
-      killall
-      mons
-      neofetch
-      neovim
-      nodejs
-      pavucontrol
-      pulsemixer
-      python3
-      ripgrep
-      silver-searcher
-      surfraw
-      tmux
-      tree
-      unzip
-      vim
-      wget
-      xclip
-    ] ++ (if useXserver then [
-      # redshift
-      i3lock-color
-      polybar
-      scrot
-      slop
-      xbindkeys
-    ] else [])
-  );
+        polybar = pkgs.polybar.override {
+          i3GapsSupport = true;
+          pulseSupport = true;
+        };
+      in [
+        bat
+        exa
+        fd
+        feh
+        file
+        git
+        htop
+        jq
+        killall
+        mons
+        neofetch
+        neovim
+        nodejs
+        pavucontrol
+        pulsemixer
+        python3
+        ripgrep
+        silver-searcher
+        surfraw
+        tmux
+        tree
+        unzip
+        vim
+        wget
+        xclip
+      ] ++ lib.optionals useXserver [
+        # redshift
+        i3lock-color
+        polybar
+        scrot
+        slop
+        xbindkeys
+      ]
+    );
 
-  environment.sessionVariables = {
-    # Wayland
-    NIXOS_OZONE_WL = "1";
+    sessionVariables = {
+      # Wayland
+      NIXOS_OZONE_WL = "1";
+    };
   };
 
   fonts.fonts = with pkgs; [
@@ -208,29 +226,4 @@ in {
     noto-fonts-cjk
     noto-fonts-emoji
   ];
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  nixpkgs.config = import ./nixpkgs-config.nix;
-
-  nix.settings = {
-    auto-optimise-store = true;
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
 }
