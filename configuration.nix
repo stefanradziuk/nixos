@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 let
   useXserver = true;
@@ -10,7 +10,7 @@ in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
+      home-manager.nixosModule
     ];
 
   nixpkgs.config = import ./nixpkgs-config.nix;
@@ -40,7 +40,7 @@ in {
         useOSProber = true;
         device = "nodev";
         efiSupport = true;
-        splashImage = /home/stefan/pictures/wallpapers/thonk.png;
+        splashImage = ./wallpapers/thonk.png;
       };
     };
 
