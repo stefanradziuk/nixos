@@ -1,0 +1,14 @@
+[Default Applications]
+text/html=google-chrome-beta.desktop
+x-scheme-handler/http=google-chrome-beta.desktop
+x-scheme-handler/https=google-chrome-beta.desktop
+x-scheme-handler/about=google-chrome-beta.desktop
+x-scheme-handler/unknown=google-chrome-beta.desktop
+x-scheme-handler/webcal=google-chrome-beta.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
+application/pdf=userapp-zathura-X86DO1.desktop
+
+[Added Associations]
+image/jpeg=feh.desktop;
+image/png=feh.desktop;

@@ -55,10 +55,12 @@ in {
         firefox
         fzf
         gh
+        gnumake
         google-chrome-beta
         gparted
         imagemagick
         kitty
+        mpv
         nodePackages.bash-language-server
         psst
         rofi

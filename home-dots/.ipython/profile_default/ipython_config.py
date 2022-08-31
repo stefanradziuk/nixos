@@ -570,7 +570,7 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 
 ## Add shortcuts from 'emacs' insert mode to 'vi' insert mode.
 #  Default: True
-# c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = True
+c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = False
 
 ## Allows to enable/disable the prompt toolkit history search
 #  Default: True
@@ -709,7 +709,7 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 ## The time in milliseconds that is waited for a mapped key
 #         sequence to complete.
 #  Default: 0.5
-# c.TerminalInteractiveShell.timeoutlen = 0.5
+c.TerminalInteractiveShell.timeoutlen = 0.25
 
 ## Use 24bit colors instead of 256 colors in prompt highlighting.
 #          If your terminal supports true color, the following command should
