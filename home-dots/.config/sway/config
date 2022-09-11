@@ -10,9 +10,6 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
-set $term st -e tmux
-
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -25,6 +22,11 @@ output HDMI-A-2 resolution 1920x1080 position 0,0
 # output eDP-1 disable
 # output eDP-1 resolution 1920x1080 position 0,1080
 # output eDP-1 scale 1.25
+
+# laptop lid state
+set $laptop_screen eDP-1
+bindswitch lid:off output $laptop_screen enable
+bindswitch lid:on output $laptop_screen disable
 
 ### Idle configuration
 #
@@ -83,11 +85,11 @@ input "type:keyboard" {
 
 # Basics:
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec st -e tmux
 
 # Start a floating terminal
 for_window [title="floating_term"] floating enable
-bindsym $mod+Shift+Return exec $term -t floating_term
+bindsym $mod+Shift+Return exec st -t floating_term -e tmux
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -210,6 +212,8 @@ bindsym $mod+Shift+Tab workspace prev
 # TODO port
 # bindsym $mod+c exec python $HOME/bin/cycle_workspace.py
 bindsym $mod+x exec python $HOME/bin/renumber_once.py
+# mod+` (similar to tmux <C-a>!)
+bindsym $mod+grave exec $HOME/bin/i3_bang
 
 # Layout stuff:
 bindsym $mod+v splitv
