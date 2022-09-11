@@ -49,6 +49,7 @@ in {
         acpilight
         cinnamon.nemo
         diff-so-fancy
+        difftastic
         direnv
         dunst
         exfat
