@@ -1,7 +1,6 @@
 {
   inputs = {
-    # pinned back from "github:nixos/nixpkgs/nixos-unstable" because of a bad mupdf/zathura update
-    nixpkgs.url = "github:stefanradziuk/nixpkgs/chrome-flag-order";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";

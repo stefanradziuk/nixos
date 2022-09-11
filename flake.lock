@@ -23,16 +23,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661983123,
-        "narHash": "sha256-4NOgMAmGxpVEEq1fB165X1e254UvNwpAS7W0LSsCBAQ=",
-        "owner": "stefanradziuk",
+        "lastModified": 1662732537,
+        "narHash": "sha256-iqxa+38SRU+SwNsKDyP8rZt79yPFGSgTe+K4Ujbb/uw=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "534de02c3d33997717affd5536e4c5d4bbb2e7ec",
+        "rev": "74a1793c659d09d7cf738005308b1f86c90cb59b",
         "type": "github"
       },
       "original": {
-        "owner": "stefanradziuk",
-        "ref": "chrome-flag-order",
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
