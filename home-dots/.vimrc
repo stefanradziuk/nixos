@@ -211,7 +211,7 @@ set whichwrap=b,s,<,>,[,]
 " highlight trailing whitespace
 set list lcs=trail:~,extends:@,precedes:@,tab:\·\ 
 set display=lastline "@@@ on wrap
-set number
+set number relativenumber
 "set colorcolumn=80
 "set cursorline
 

@@ -2,10 +2,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, home-manager, ... }:
+{ config
+, home-manager
+, lib
+, pkgs
+, ...
+}:
 
 let
+  inherit (pkgs) callPackage;
   useXserver = true;
+  mypkgs = pkgs.callPackage ./mypkgs {};
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -119,6 +126,7 @@ in {
         waybar
         wev
         wl-clipboard
+        mypkgs.rbql
       ];
     };
 
@@ -163,9 +171,14 @@ in {
       let
         python3 = pkgs.python3.withPackages (python-packages:
         with python-packages; [
-          numpy
-          ipython
           i3ipc
+          ipython
+          numpy
+          pyyaml  # TODO do per-project derivations
+          isort
+          black
+          jinja2
+          mypkgs.rbql
         ] ++ (if useXserver then [
           i3-py
         ] else [])
