@@ -15,6 +15,7 @@ Plug 'ARM9/arm-syntax-vim'
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'LnL7/vim-nix'
+Plug 'mechatroner/rainbow_csv'
 
 " telescope + deps
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
