@@ -35,12 +35,11 @@ font pango:Fira Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec st -e tmux
 
 # start a floating terminal
-for_window [instance="kitty" title="floating_term"] floating enable
-
-bindsym $mod+Shift+Return exec kitty --title floating_term
+for_window [title="floating_term"] floating enable
+bindsym $mod+Shift+Return exec st -t floating_term -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -238,11 +237,12 @@ for_window [title="Battery Warning"] sticky enable
 
 # exec--no-startup-id python $HOME/bin/workspace_renumber.py
 
-exec_always --no-startup-id $HOME/programming/picom/build/src/picom --daemon --config /dev/null --backend glx --vsync
+# exec_always --no-startup-id $HOME/programming/picom/build/src/picom --daemon --config /dev/null --backend glx --vsync
 
 exec_always --no-startup-id $HOME/.fehbg
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id polybar-msg cmd quit ; polybar --config=$XDG_CONFIG_HOME/polybar/config-default.ini
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec --no-startup-id hideIt.sh -N 'polybar' -d bottom --region 0x1080+1920+-10 -p 0 -i 1 -w
 
 # restart polybar
