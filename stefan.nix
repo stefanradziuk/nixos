@@ -48,6 +48,7 @@ in {
       in [
         acpilight
         cinnamon.nemo
+        colorpicker
         diff-so-fancy
         difftastic
         direnv
@@ -61,7 +62,6 @@ in {
         gparted
         imagemagick
         kitty
-        mpv
         nodePackages.bash-language-server
         psst
         rofi
@@ -73,15 +73,22 @@ in {
         texlive
         wtype
         xdotool
-        youtube-dl
         zathura
         zsh-prezto
         zsh-z
+
+        teams
+
+        ffmpeg
+        mpv
+        youtube-dl
 
         cargo
         rust-analyzer
         rustc
         rustfmt
+
+        zoom-us
 
         # theming
         gnome-themes-extra

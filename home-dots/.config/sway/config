@@ -18,15 +18,22 @@ set $menu rofi -show run | xargs swaymsg exec --
 ### Output configuration
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output * bg /home/stefan/pictures/wallpapers/raytracing_purple.png fill
-output HDMI-A-2 resolution 1920x1080 position 0,0
-# output eDP-1 disable
+
+# +-------+
+# |  DP-3 |
+# +-------+
+# | eDP-1 |
+# +-------+
+output DP-3  resolution 1920x1080 position 0,0
+output eDP-1 resolution 1920x1080 position 0,1080
+
 # output eDP-1 resolution 1920x1080 position 0,1080
 # output eDP-1 scale 1.25
 
 # laptop lid state
 set $laptop_screen eDP-1
-bindswitch lid:off output $laptop_screen enable
-bindswitch lid:on output $laptop_screen disable
+bindswitch --reload lid:off output $laptop_screen enable
+bindswitch --reload lid:on output $laptop_screen disable
 
 ### Idle configuration
 #
@@ -69,6 +76,9 @@ input "type:touchpad" {
   natural_scroll enabled
   middle_emulation enabled
   pointer_accel 0.5
+}
+input "type:Mouse" {
+  dwt disabled
 }
 
 input "type:keyboard" {
@@ -209,11 +219,12 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-# TODO port
-# bindsym $mod+c exec python $HOME/bin/cycle_workspace.py
+bindsym $mod+c exec python $HOME/bin/cycle_workspace.py
 bindsym $mod+x exec python $HOME/bin/renumber_once.py
 # mod+` (similar to tmux <C-a>!)
 bindsym $mod+grave exec $HOME/bin/i3_bang
+
+bindsym $mod+t exec $HOME/bin/i3_tag_current.py "$(rofi -dmenu -p 'workspace tag')"
 
 # Layout stuff:
 bindsym $mod+v splitv

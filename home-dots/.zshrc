@@ -76,6 +76,8 @@ fi
 
 source "$HOME/.secrets"
 
+eval "$(direnv hook zsh)"
+
 gi() {
   touch .gitignore
   curl "https://www.toptal.com/developers/gitignore/api/$1" >> .gitignore

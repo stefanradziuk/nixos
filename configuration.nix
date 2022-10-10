@@ -136,6 +136,16 @@ in {
       dedicatedServer.openFirewall = true;
     };
 
+    tmux = {
+      enable = true;
+      clock24 = true;
+      extraConfig = ''
+        run-shell ${pkgs.tmuxPlugins.resurrect.rtp}
+        run-shell ${pkgs.tmuxPlugins.continuum.rtp}
+        set -g @continuum-restore 'on'
+      '';
+    };
+
     light.enable = true;
     nm-applet.enable = true;
     zsh.enable = true;
@@ -201,6 +211,7 @@ in {
         mons
         neofetch
         neovim
+        networkmanagerapplet
         nodejs
         pavucontrol
         pulsemixer
@@ -208,7 +219,6 @@ in {
         ripgrep
         silver-searcher
         surfraw
-        tmux
         tree
         unzip
         vim
