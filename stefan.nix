@@ -43,6 +43,8 @@ in {
         # TODO nix env for tex projects
         texlive = pkgs.texlive.combine {
           inherit (pkgs.texlive) scheme-medium titlesec fira fontaxes enumitem;
+          # xournalpp tex support - TODO upstream?
+          inherit (pkgs.texlive) scontents standalone varwidth;
         };
 
       in [
@@ -78,6 +80,7 @@ in {
         zsh-z
 
         teams
+        xournalpp
 
         ffmpeg
         mpv
