@@ -317,7 +317,7 @@ default_border          pixel 0
 default_floating_border pixel 0
 smart_borders           on
 smart_gaps              on
-gaps inner              10
+gaps inner              0
 gaps outer              0
 
 # popup_during_fullscreen leave_fullscreen

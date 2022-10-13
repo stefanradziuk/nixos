@@ -36,7 +36,7 @@ set notification-error-fg "#1c1c1c"
 set notification-warning-bg "#ffafaf"
 set notification-warning-fg "#1c1c1c"
 
-set recolor-keephue "false"
+set recolor-keephue true
 set recolor-darkcolor "#ffffff" # alt 1c1c1c
 set recolor-lightcolor "#1c1c1c"
 
