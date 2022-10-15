@@ -17,6 +17,8 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'LnL7/vim-nix'
 Plug 'mechatroner/rainbow_csv'
 
+Plug 'whonore/Coqtail'
+
 " telescope + deps
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -184,6 +186,9 @@ nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
 
 " }}}
+
+" coqtail
+nnoremap <C-l> <cmd>CoqToLine<cr>
 
 " treesitter
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

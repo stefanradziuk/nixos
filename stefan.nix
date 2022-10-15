@@ -57,6 +57,7 @@ in {
         dunst
         exfat
         firefox
+        fontpreview
         fzf
         gh
         gnumake
@@ -78,6 +79,8 @@ in {
         zathura
         zsh-prezto
         zsh-z
+
+        coq
 
         teams
         xournalpp
