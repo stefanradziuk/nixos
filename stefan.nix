@@ -22,7 +22,7 @@ in {
 
   home = {
     stateVersion = "21.11";
-    file = mapDir ./home-dots;
+    file = mapDir ./dots;
 
     packages = with pkgs; (
       let
