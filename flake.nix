@@ -9,7 +9,7 @@
   };
 
   outputs = { self, nixpkgs, ... }@attrs: {
-    nixosConfigurations.ellsemere = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.ellesmere = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [ ./configuration.nix ];
