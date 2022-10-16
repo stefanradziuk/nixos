@@ -31,11 +31,6 @@ in {
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
-    fsType = "vfat";
-  };
-
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
@@ -44,7 +39,7 @@ in {
         device = "nodev";
         efiSupport = true;
         splashImage = ./wallpapers/thonk.png;
-        configurationLimit = 3;
+        configurationLimit = 20;
       };
     };
 
