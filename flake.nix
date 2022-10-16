@@ -12,7 +12,19 @@
     nixosConfigurations.ellesmere = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
-      modules = [ ./configuration.nix ];
+      modules = [
+        ./configuration.nix
+        ./hosts/ellesmere/default.nix
+      ];
+    };
+
+    nixosConfigurations.nias = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = attrs;
+      modules = [
+        ./configuration.nix
+        ./hosts/nias/default.nix
+      ];
     };
   };
 }

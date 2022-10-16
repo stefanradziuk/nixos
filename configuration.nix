@@ -14,11 +14,7 @@ let
   useXserver = true;
   mypkgs = pkgs.callPackage ./mypkgs {};
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      home-manager.nixosModule
-    ];
+  imports = [ home-manager.nixosModule ];
 
   nixpkgs.config = import ./nixpkgs-config.nix;
 
@@ -55,9 +51,7 @@ in {
     supportedFilesystems = [ "ntfs" ];
   };
 
-  # TODO factor out device specific settings
   networking = {
-    hostName = "ellesmere";
     # Pick only one of the below networking options.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;  # Easiest to use and most distros use this by default.
