@@ -7,13 +7,16 @@ Plug 'stefanradziuk/seoul256.vim'
 " Plug 'noahfrederick/vim-noctu'
 Plug 'chriskempson/base16-vim'
 Plug 'lervag/vimtex'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-maximizer'
 Plug 'ARM9/arm-syntax-vim'
 " Plug 'RRethy/vim-hexokinase' " (css colors)
+
+" completion plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
 Plug 'LnL7/vim-nix'
 Plug 'mechatroner/rainbow_csv'
 
@@ -188,7 +191,7 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPacka
 " }}}
 
 " coqtail
-nnoremap <C-l> <cmd>CoqToLine<cr>
+autocmd FileType coq nnoremap <C-l> <cmd>CoqToLine<cr>
 
 " treesitter
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

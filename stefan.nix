@@ -80,6 +80,9 @@ in {
         zsh-prezto
         zsh-z
 
+        vcv-rack
+        audacity
+
         coq
 
         teams

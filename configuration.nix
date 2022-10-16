@@ -48,6 +48,7 @@ in {
         device = "nodev";
         efiSupport = true;
         splashImage = ./wallpapers/thonk.png;
+        configurationLimit = 3;
       };
     };
 
