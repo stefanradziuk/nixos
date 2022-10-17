@@ -92,6 +92,8 @@ in {
         mpv
         youtube-dl
 
+        rclone
+
         cargo
         rust-analyzer
         rustc
