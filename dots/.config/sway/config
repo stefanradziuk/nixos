@@ -32,8 +32,8 @@ output eDP-1 resolution 1920x1080 position 0,1080
 
 # laptop lid state
 set $laptop_screen eDP-1
-bindswitch --reload lid:off output $laptop_screen enable
-bindswitch --reload lid:on output $laptop_screen disable
+bindswitch --reload --locked lid:off output $laptop_screen enable
+bindswitch --reload --locked lid:on output $laptop_screen disable
 
 ### Idle configuration
 #

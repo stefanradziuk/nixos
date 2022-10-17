@@ -5,6 +5,9 @@
 [safe]
   directory = /home/stefan/nixpkgs
 
+[push]
+  autoSetupRemote = true
+
 [pull]
   ff = only
 
