@@ -8,4 +8,6 @@
     device = "/dev/disk/by-uuid/B926-17D7";
     fsType = "vfat";
   };
+
+  boot.loader.grub.useOSProber = true;
 }

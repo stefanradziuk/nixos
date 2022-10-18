@@ -35,7 +35,6 @@ in {
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
-        useOSProber = true;
         device = "nodev";
         efiSupport = true;
         splashImage = ./wallpapers/thonk.png;
