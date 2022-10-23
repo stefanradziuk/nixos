@@ -222,11 +222,6 @@ in {
         xbindkeys
       ]
     );
-
-    sessionVariables = {
-      # Wayland
-      NIXOS_OZONE_WL = "1";
-    };
   };
 
   fonts.fonts = with pkgs; [
