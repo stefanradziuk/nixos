@@ -3,3 +3,4 @@ skin-tone = neutral
 max-recent = 0
 prompt = 🐝
 no-frecency = false
+files = [emojis, math]
