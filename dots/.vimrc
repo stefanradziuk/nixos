@@ -274,6 +274,8 @@ set nohlsearch
 set splitbelow
 set splitright
 
+set foldnestmax=2
+
 " leader y copies selection into "c and puts in system clipboard
 vnoremap <silent><Leader>y "cy <Bar> :call system('xclip -selection clipboard', @c)<CR>
 
@@ -326,6 +328,8 @@ highlight StatusLineNC    ctermfg=bg    ctermbg=245
 
 "highlight Visual ctermbg=13
 "highlight Visual ctermfg=bg
+
+highlight CocInlayHint    ctermfg=59
 
 " }}}
 
