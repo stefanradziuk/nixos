@@ -8,7 +8,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
     "modules-right":
-      [ "custom/redshifter"
+      [ "custom/screenshot"
       , "custom/separator"
       , "pulseaudio"
       , "custom/separator"
@@ -137,12 +137,10 @@
         "on-scroll-down": "pulsemixer --unmute --change-volume -5", // && volume_notification",
         "on-click-right": "pavucontrol"
     },
-    "custom/redshifter": {
-        "format": "",
+    "custom/screenshot": {
+        "format": "",
         "interval": "once",
-        "on-click": "/home/stefan/bin/redshifter default",
-        "on-scroll-up": "/home/stefan/bin/redshifter add 200",
-        "on-scroll-down": "/home/stefan/bin/redshifter sub 200",
+        "on-click": "grimshot copy window",
         "tooltip": false
     },
     "custom/separator": {
