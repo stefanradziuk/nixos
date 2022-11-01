@@ -73,8 +73,9 @@ in {
     enable = useXserver;
 
     displayManager = {
-      startx.enable = true;
-      defaultSession = "none+i3";
+      sddm.enable = true;
+      # startx.enable = true;
+      # defaultSession = "none+i3";
     };
 
     windowManager.i3 = {
@@ -84,6 +85,19 @@ in {
 
     desktopManager = {
       xterm.enable = false;
+      plasma5 = {
+        enable = true;
+        excludePackages = with pkgs.libsForQt5; [
+          elisa
+          gwenview
+          okular
+          oxygen
+          khelpcenter
+          konsole
+          plasma-browser-integration
+          print-manager
+        ];
+      };
     };
 
     autoRepeatDelay = 400;
