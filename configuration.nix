@@ -10,8 +10,10 @@
 }:
 
 let
-  inherit (pkgs) callPackage;
   useXserver = true;
+  useGnome = true;
+
+  inherit (pkgs) callPackage;
   mypkgs = pkgs.callPackage ./mypkgs {};
 in {
   imports = [ home-manager.nixosModule ];
@@ -73,8 +75,10 @@ in {
     enable = useXserver;
 
     displayManager = {
-      startx.enable = true;
-      defaultSession = "none+i3";
+      # adds lockscreen, gnome login etc
+      gdm.enable = true;
+      # startx.enable = true;
+      # defaultSession = "none+i3";
     };
 
     windowManager.i3 = {
@@ -84,6 +88,7 @@ in {
 
     desktopManager = {
       xterm.enable = false;
+      gnome.enable = useGnome;
     };
 
     autoRepeatDelay = 400;
@@ -95,6 +100,12 @@ in {
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
+  };
+
+  services.gnome = {
+    core-utilities.enable = false;
+    tracker-miners.enable = false;
+    tracker.enable = false;
   };
 
   programs = {
