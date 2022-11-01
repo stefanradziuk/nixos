@@ -1,0 +1,10 @@
+#!/usr/bin/pulseaudio -nF
+#
+
+# https://wiki.archlinux.org/title/Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset
+# load system wide configuration
+.include /etc/pulse/default.pa
+
+### load driver modules for Bluetooth hardware
+load-module module-bluetooth-policy
+load-module module-bluetooth-discover

@@ -169,7 +169,17 @@ in {
 
       # automatically switch to newly-connected devices
       # https://wiki.archlinux.org/title/bluetooth_headset#Setting_up_auto_connection
-      load-module module-switch-on-connect
+      # load-module module-switch-on-connect
+
+      # https://wiki.archlinux.org/title/Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset
+      ### unload driver modules for Bluetooth hardware
+      .ifexists module-bluetooth-policy.so
+        unload-module module-bluetooth-policy
+      .endif
+
+      .ifexists module-bluetooth-discover.so
+        unload-module module-bluetooth-discover
+      .endif
     '';
 
     # extra codecs
