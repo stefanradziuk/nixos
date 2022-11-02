@@ -73,9 +73,9 @@ in {
     enable = useXserver;
 
     displayManager = {
-      sddm.enable = true;
-      # startx.enable = true;
-      # defaultSession = "none+i3";
+      # sddm.enable = true;
+      startx.enable = true;
+      defaultSession = "none+i3";
     };
 
     windowManager.i3 = {
