@@ -28,6 +28,7 @@ in {
       let
         google-chrome-beta = pkgs.google-chrome-beta.override {
           commandLineArgs = [
+            "--password-store=basic"
             "--force-dark-mode"
             "--enable-features=WebUIDarkMode"
           ];

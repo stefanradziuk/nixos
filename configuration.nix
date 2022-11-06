@@ -248,4 +248,6 @@ in {
     noto-fonts-cjk
     noto-fonts-emoji
   ];
+
+  environment.variables.XCURSOR_SIZE = "32";
 }
