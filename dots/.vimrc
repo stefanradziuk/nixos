@@ -33,6 +33,20 @@ call plug#end()
 " vimtex
 let g:tex_flavor = 'latex'
 let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-verbose',
+    \   '-shell-escape',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
@@ -238,11 +252,13 @@ filetype plugin indent on
 set mouse=a
 
 if !has('nvim')
-	set ttymouse=sgr
+  set ttymouse=sgr
 endif
 
 " cursor wrapping
 set whichwrap=b,s,<,>,[,]
+
+set nowrap
 
 " ui
 " highlight trailing whitespace
