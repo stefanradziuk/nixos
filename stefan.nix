@@ -51,12 +51,13 @@ in {
           '';
         });
 
+        texlive = pkgs.texlive.combined.scheme-full;
         # TODO nix env for tex projects
-        texlive = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-medium titlesec fira fontaxes enumitem;
-          # xournalpp tex support - TODO upstream?
-          inherit (pkgs.texlive) scontents standalone varwidth;
-        };
+        # texlive = pkgs.texlive.combine {
+        #   inherit (pkgs.texlive) scheme-medium titlesec fira fontaxes enumitem svg svgcolor svg-inkscape;
+        #   # xournalpp tex support - TODO upstream?
+        #   inherit (pkgs.texlive) scontents standalone varwidth;
+        # };
 
       in [
         acpilight
