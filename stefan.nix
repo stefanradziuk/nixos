@@ -119,6 +119,12 @@ in {
 
         zoom-us
 
+        # kidneycaliper stuff
+        blas
+        lapack
+        openslide
+        vips
+
         # theming
         gnome-themes-extra
         gsettings-desktop-schemas
