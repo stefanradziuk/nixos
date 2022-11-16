@@ -28,6 +28,16 @@ in {
       let
         google-chrome-beta = pkgs.google-chrome-beta.override {
           commandLineArgs = [
+            "--force-device-scale-factor=1.0"
+            "--password-store=basic"
+            "--force-dark-mode"
+            "--enable-features=WebUIDarkMode"
+          ];
+        };
+
+        google-chrome = pkgs.google-chrome.override {
+          commandLineArgs = [
+            "--force-device-scale-factor=1.0"
             "--password-store=basic"
             "--force-dark-mode"
             "--enable-features=WebUIDarkMode"
@@ -60,13 +70,18 @@ in {
         firefox
         fontpreview
         fzf
+        gcc
         gh
         gnumake
+        google-chrome
         google-chrome-beta
         gparted
+        helix
         imagemagick
+        inkscape
         kitty
         nodePackages.bash-language-server
+        parallel
         psst
         rofi
         rofimoji
@@ -78,6 +93,7 @@ in {
         wtype
         xdotool
         zathura
+        zip
         zsh-prezto
         zsh-z
 
