@@ -6,6 +6,7 @@
 , home-manager
 , lib
 , pkgs
+, nur-Mic92
 , ...
 }:
 
@@ -173,7 +174,7 @@ in {
     extraGroups = [ "wheel" "video" ];
   };
 
-  home-manager.users.stefan = import ./stefan.nix;
+  home-manager.users.stefan = import ./stefan.nix { inherit lib pkgs nur-Mic92; };
 
   security.sudo.wheelNeedsPassword = false;
 

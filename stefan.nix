@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, nur-Mic92, ... }:
 let
   mapDir = dir: let
     mapToAttrs = f: list: builtins.listToAttrs (map f list);
@@ -100,6 +100,8 @@ in {
 
         vcv-rack
         audacity
+
+    nur-Mic92.packages."${pkgs.system}".python3Packages.jupyterthemes
 
         coq
 
