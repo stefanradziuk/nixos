@@ -10,6 +10,7 @@ image/png=feh.desktop
 application/pdf=userapp-zathura-X86DO1.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/slack=slack.desktop
+x-scheme-handler/mailto=google-chrome.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop;
