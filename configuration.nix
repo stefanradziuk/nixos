@@ -62,11 +62,29 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-  console.keyMap = "uk";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   useXkbConfig = true; # use xkbOptions in tty.
-  # };
+  console = {
+    useXkbConfig = true;
+    font = "Lat2-Terminus16";
+    colors = [
+      "626262"
+      "7e2233"
+      "118053"
+      "caa687"
+      "8a642d"
+      "904c7e"
+      "7ac7d2"
+      "e4e4e4"
+
+      "4e4e4e"
+      "632a34"
+      "0f5e3f"
+      "886f59"
+      "7e6846"
+      "6e3e62"
+      "739da3"
+      "d0d0d0"
+    ];
+  };
 
   # Enable the X11 windowing system.
   services.xserver = {
