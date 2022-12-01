@@ -104,8 +104,8 @@ in {
     autoRepeatInterval = 25;
 
     # Configure keymap in X11
-    layout = "gb,us,pl";
-    xkbOptions = "grp:ctrls_toggle";
+    layout = "gb,pl";
+    xkbOptions = "grp:ctrls_toggle,caps:swapescape";
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
@@ -155,6 +155,8 @@ in {
   };
 
   services.logind.lidSwitch = "ignore";
+
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
