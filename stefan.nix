@@ -106,6 +106,8 @@ in {
         teams
         xournalpp
 
+        vscode-fhs
+
         ffmpeg
         mpv
         youtube-dl
