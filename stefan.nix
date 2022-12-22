@@ -101,10 +101,17 @@ in {
         vcv-rack
         audacity
 
+        ghc
+        haskell-language-server
+
+        pypy3
+
         coq
 
         teams
         xournalpp
+        discord
+        zoom-us
 
         vscode-fhs
 
@@ -118,8 +125,6 @@ in {
         rust-analyzer
         rustc
         rustfmt
-
-        zoom-us
 
         # kidneycaliper stuff
         blas
