@@ -84,19 +84,7 @@ in {
 
     desktopManager = {
       xterm.enable = false;
-      plasma5 = {
-        enable = true;
-        excludePackages = with pkgs.libsForQt5; [
-          elisa
-          gwenview
-          okular
-          oxygen
-          khelpcenter
-          konsole
-          plasma-browser-integration
-          print-manager
-        ];
-      };
+      xfce.enable = true;
     };
 
     autoRepeatDelay = 400;
@@ -109,6 +97,10 @@ in {
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
   };
+
+  # https://www.reddit.com/r/NixOS/comments/s9ytrg/xdgdesktopportalwlr_on_sway_causes_20_seconds/
+  # https://discourse.nixos.org/t/xdg-desktop-portal-not-working-on-wayland-while-kde-is-installed/20919
+  # services.dbus.enable = true;
 
   programs = {
     sway = {
@@ -251,4 +243,7 @@ in {
   ];
 
   environment.variables.XCURSOR_SIZE = "32";
+
+  # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+  environment.variables.GTK_USE_PORTAL = "0";
 }
