@@ -45,12 +45,10 @@ in {
     supportedFilesystems = [ "ntfs" ];
   };
 
-  networking = {
-    # Pick only one of the below networking options.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    networkmanager.dns = "none";
-    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+  networking.networkmanager = {
+    enable = true;
+    dns = "none";
+    insertNameservers = [ "1.1.1.1" "9.9.9.9" ];
   };
 
   # Set your time zone.
@@ -95,7 +93,13 @@ in {
     xkbOptions = "grp:ctrls_toggle,caps:swapescape";
 
     # Enable touchpad support (enabled default in most desktopManager).
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      touchpad = {
+        naturalScrolling = true;
+        accelSpeed = "0.25";
+      };
+    };
   };
 
   # https://www.reddit.com/r/NixOS/comments/s9ytrg/xdgdesktopportalwlr_on_sway_causes_20_seconds/
@@ -185,6 +189,7 @@ in {
           black
           jinja2
           mypkgs.rbql
+          sympy
         ] ++ (if useXserver then [
           i3-py
         ] else [])
@@ -221,9 +226,10 @@ in {
         wget
         xclip
       ] ++ lib.optionals useXserver [
-        # redshift
         i3lock-color
+        picom-next
         polybar
+        redshift
         scrot
         slop
         xbindkeys
