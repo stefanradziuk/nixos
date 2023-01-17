@@ -59,6 +59,14 @@ in {
         #   inherit (pkgs.texlive) scontents standalone varwidth;
         # };
 
+        discord = pkgs.discord.overrideAttrs (_: rec {
+          version = "0.0.22";
+          src = fetchurl {
+            url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
+            sha256 = "sha256-F1xzdx4Em6Ref7HTe9EH7whx49iFc0DFpaQKdFquq6c=";
+          };
+        });
+
       in [
         acpilight
         cinnamon.nemo
@@ -68,6 +76,7 @@ in {
         direnv
         dunst
         exfat
+        figlet
         firefox
         fontpreview
         fzf
@@ -107,6 +116,10 @@ in {
         pypy3
 
         coq
+        ocaml
+        emacs
+        agda
+        wabt
 
         teams
         xournalpp
@@ -125,6 +138,8 @@ in {
         rust-analyzer
         rustc
         rustfmt
+
+        qdirstat
 
         # kidneycaliper stuff
         blas
