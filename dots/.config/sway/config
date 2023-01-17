@@ -226,7 +226,7 @@ bindsym $mod+x exec python $HOME/bin/renumber_once.py
 # mod+` (similar to tmux <C-a>!)
 bindsym $mod+grave exec $HOME/bin/i3_bang
 
-bindsym $mod+t exec $HOME/bin/i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻' | rofi -dmenu -p 'workspace tag')"
+bindsym $mod+t exec $HOME/bin/i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻\n📑' | rofi -dmenu -p 'workspace tag')"
 
 # Layout stuff:
 bindsym $mod+v splitv

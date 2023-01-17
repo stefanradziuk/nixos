@@ -258,8 +258,6 @@ endif
 " cursor wrapping
 set whichwrap=b,s,<,>,[,]
 
-set nowrap
-
 " ui
 " highlight trailing whitespace
 set list lcs=trail:~,extends:@,precedes:@,tab:\·\ 
@@ -367,5 +365,10 @@ autocmd FileType markdown syn match MarkdownIgnore "\$.*_.*\$"
 " }}}
 
 map Y yy
+
+" on <c-w>z make current window widest and tallest possible
+noremap <c-w>z <c-w>_ \| <c-w>\|
+
+command LightMode colorscheme seoul256-light | highlight CoqtailChecked ctermbg=251 | highlight CoqtailSent ctermbg=252
 
 " vim:foldmethod=marker:foldlevel=0
