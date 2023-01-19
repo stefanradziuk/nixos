@@ -75,10 +75,7 @@ in {
       defaultSession = "none+i3";
     };
 
-    windowManager.i3 = {
-      enable = useXserver;
-      package = pkgs.i3-gaps;
-    };
+    windowManager.i3.enable = useXserver;
 
     desktopManager = {
       xterm.enable = false;
@@ -196,7 +193,6 @@ in {
         );
 
         polybar = pkgs.polybar.override {
-          i3GapsSupport = true;
           pulseSupport = true;
         };
       in [

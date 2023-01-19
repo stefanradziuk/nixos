@@ -89,7 +89,8 @@ in {
         helix
         imagemagick
         inkscape
-        kitty
+        # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
+        # kitty
         nodePackages.bash-language-server
         parallel
         psst
