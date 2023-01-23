@@ -371,4 +371,8 @@ noremap <c-w>z <c-w>_ \| <c-w>\|
 
 command LightMode colorscheme seoul256-light | highlight CoqtailChecked ctermbg=251 | highlight CoqtailSent ctermbg=252
 
+" coqtail-style bindings for tex editing
+autocmd FileType tex nnoremap <C-l> <cmd>write<cr>
+autocmd FileType tex inoremap <C-l> <cmd>write<cr>
+
 " vim:foldmethod=marker:foldlevel=0

@@ -121,6 +121,7 @@ in {
         emacs
         agda
         wabt
+        rlwrap
 
         teams
         xournalpp
