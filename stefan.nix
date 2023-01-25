@@ -118,7 +118,7 @@ in {
 
         coq
         ocaml
-        emacs
+        emacs-gtk
         agda
         wabt
         rlwrap
