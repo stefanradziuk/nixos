@@ -125,6 +125,7 @@ alias gbc='git checkout -b'
 
 # Commit (c)
 alias gcm='git commit --message'
+alias gca='git commit --all'
 alias gcam='git commit --all --message'
 alias gco='git checkout'
 alias gcf='git commit --amend --reuse-message HEAD'
