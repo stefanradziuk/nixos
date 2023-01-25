@@ -117,3 +117,71 @@ tmpdir-shell() {
   )
   rm -rf $TMP_FILE
 }
+
+# selected git aliases from zprezto
+# Branch (b)
+alias gb='git branch'
+alias gbc='git checkout -b'
+
+# Commit (c)
+alias gcm='git commit --message'
+alias gcam='git commit --all --message'
+alias gco='git checkout'
+alias gcf='git commit --amend --reuse-message HEAD'
+alias gcl='git-commit-lost'
+
+# Fetch (f)
+alias gf='git fetch'
+alias gfm='git pull'
+alias gfr='git pull --rebase'
+alias gfra='git pull --rebase --autostash'
+
+# Index (i)
+alias gia='git add'
+alias giA='git add --patch'
+alias giu='git add --update'
+alias gid='git diff --no-ext-diff --cached'
+alias giD='git diff --no-ext-diff --cached --word-diff'
+
+# Log (l)
+alias gl='git log --topo-order --pretty=format:"$_git_log_medium_format"'
+alias gls='git log --topo-order --stat --pretty=format:"$_git_log_medium_format"'
+alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"$_git_log_medium_format"'
+alias glo='git log --topo-order --pretty=format:"$_git_log_oneline_format"'
+alias glg='git log --topo-order --graph --pretty=format:"$_git_log_oneline_format"'
+alias glb='git log --topo-order --pretty=format:"$_git_log_brief_format"'
+alias glc='git shortlog --summary --numbered'
+alias glS='git log --show-signature'
+
+# Merge (m)
+alias gm='git merge'
+alias gmC='git merge --no-commit'
+alias gmF='git merge --no-ff'
+alias gma='git merge --abort'
+
+# Push (p)
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+
+# Rebase (r)
+alias gr='git rebase'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias grs='git rebase --skip'
+
+# Remote (R)
+alias gR='git remote'
+alias gRa='git remote add'
+alias gRs='git remote show'
+alias gRb='git-hub-browse'
+
+# Stash (s)
+alias gs='git stash'
+alias gsp='git stash pop'
+
+# Working Copy (w)
+alias gws='git status --ignore-submodules=$_git_status_ignore_submodules --short'
+alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules'
+alias gwd='git diff --no-ext-diff'
+alias gwD='git diff --no-ext-diff --word-diff'
