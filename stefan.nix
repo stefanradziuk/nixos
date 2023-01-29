@@ -89,6 +89,7 @@ in {
         helix
         imagemagick
         inkscape
+        lsof
         # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
         # kitty
         nodePackages.bash-language-server
@@ -134,6 +135,7 @@ in {
         mpv
         youtube-dl
 
+        sshfs
         rclone
 
         cargo
