@@ -375,4 +375,7 @@ command LightMode colorscheme seoul256-light | highlight CoqtailChecked ctermbg=
 autocmd FileType tex nnoremap <C-l> <cmd>write<cr>
 autocmd FileType tex inoremap <C-l> <cmd>write<cr>
 
+" prolog syntax highlighting for asp
+autocmd BufEnter,BufNew *.lp set syntax=prolog
+
 " vim:foldmethod=marker:foldlevel=0

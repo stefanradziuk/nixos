@@ -124,6 +124,8 @@ in {
         wabt
         rlwrap
 
+        clingo
+
         teams
         xournalpp
         discord
