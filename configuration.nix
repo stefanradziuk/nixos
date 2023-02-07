@@ -117,7 +117,7 @@ in {
         slurp
         sway-contrib.grimshot
         swayidle
-        swaylock-effects
+        swaylock  # -effects
         waybar
         wev
         wl-clipboard
