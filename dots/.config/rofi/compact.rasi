@@ -20,7 +20,7 @@ element-text, element-icon {
   background-color: #00000000;
   anchor: north;
   location: center;
-  font: "Iosevka Term 16";
+  font: "Ubuntu NerdFont 16";
   highlight: bold;
 }
 

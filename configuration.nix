@@ -232,10 +232,9 @@ in {
 
   fonts.fonts = with pkgs; [
     corefonts  # Microsoft fonts
-    fira-code
-    fira-code-symbols
     fira-mono
-    nerdfonts
+    # XXX "FiraMono" doesn't install anything?
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Ubuntu" "UbuntuMono" ]; })
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
