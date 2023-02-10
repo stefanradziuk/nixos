@@ -4,3 +4,5 @@ source ~/.vimrc
 
 set guicursor=
 set inccommand=nosplit
+
+lua require('treesitter-config')
