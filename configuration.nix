@@ -154,14 +154,13 @@ in {
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.defaultUserShell = pkgs.zsh;
   users.users.stefan = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
   };
 
-  home-manager.users.stefan = import ./stefan.nix;
+  home-manager.users.stefan = import ./stefan.nix { inherit lib pkgs mypkgs; };
 
   security.sudo.wheelNeedsPassword = false;
 

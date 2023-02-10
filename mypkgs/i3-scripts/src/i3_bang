@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# TODO doesnt work as expected with multi mon
+workspace_nums=$(i3-msg -t get_workspaces | jq '.[].num')
+
+first_available=$(awk '{ if (NR != $0) { print NR ; exit 0 } }' <<< "$workspace_nums")
+# if no number was skipped, use max workspace number + 1
+[[ -z "$first_available" ]] && first_available=$(($(tail -n 1 <<< "$workspace_nums") + 1))
+
+i3-msg -t run_command "move window to workspace $first_available; workspace $first_available" > /dev/null

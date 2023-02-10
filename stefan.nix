@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib
+, pkgs
+, mypkgs
+, ...
+}:
+
 let
   mapDir = dir: let
     mapToAttrs = f: list: builtins.listToAttrs (map f list);
@@ -146,6 +151,8 @@ in {
 
         qcachegrind
         qdirstat
+
+        mypkgs.i3-scripts
 
         # kidneycaliper stuff
         blas
