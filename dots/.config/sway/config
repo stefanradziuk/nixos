@@ -110,21 +110,21 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Surfraw
-bindsym $mod+g exec $HOME/bin/rofi_surfraw
+bindsym $mod+g exec rofi_surfraw
 
 # Change gap size
-bindsym $mod+z exec $HOME/bin/rofi_gaps
+bindsym $mod+z exec rofi_gaps
 
 # Screen lock
 bindsym Mod1+k exec swaylock
 
 # Power menu
-bindsym Mod1+j exec $HOME/bin/rofi_powermenu
+bindsym Mod1+j exec rofi_powermenu
 
 # rofi dual monitor picker
 # TODO these need to be ported to Wayland :(
-# bindsym $mod+m exec $HOME/bin/rofi_mons
-# bindsym $mod+Shift+m exec $HOME/bin/rofi_dualmonitor_touch
+# bindsym $mod+m exec rofi_mons
+# bindsym $mod+Shift+m exec rofi_dualmonitor_touch
 
 # rofi emoji picker
 bindsym $mod+Shift+n exec rofimoji
@@ -222,11 +222,11 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 bindsym $mod+c exec python $HOME/bin/cycle_workspace.py
-bindsym $mod+x exec python $HOME/bin/renumber_once.py
+bindsym $mod+x exec i3-renumber-once
 # mod+` (similar to tmux <C-a>!)
-bindsym $mod+grave exec $HOME/bin/i3_bang
+bindsym $mod+grave exec i3-bang
 
-bindsym $mod+t exec $HOME/bin/i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻\n📑' | rofi -dmenu -p 'workspace tag')"
+bindsym $mod+t exec i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻\n📑' | rofi -dmenu -p 'workspace tag')"
 
 # Layout stuff:
 bindsym $mod+v splitv
