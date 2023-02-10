@@ -1,4 +1,4 @@
-{...}:
+{ pkgs, ... }:
 
 {
   networking.hostName = "ellesmere";
@@ -9,14 +9,14 @@
     fsType = "vfat";
   };
 
-  steam = {
+  programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
 
-  home-manager.users.stefan.home.packages = [
+  home-manager.users.stefan.home.packages = (with pkgs; [
     vcv-rack
     audacity
-  ];
+  ]);
 }

@@ -17,7 +17,7 @@ set $menu rofi -show run | xargs swaymsg exec --
 
 ### Output configuration
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output * bg /home/stefan/pictures/wallpapers/raytracing_purple.png fill
+output * bg /home/stefan/pictures/wallpapers/cube.png fill
 
 # +-------+
 # |  DP-3 |
