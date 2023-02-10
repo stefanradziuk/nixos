@@ -109,8 +109,7 @@ in {
         zsh-prezto
         zsh-z
 
-        vcv-rack
-        audacity
+        graphviz
 
         ghc
         haskell-language-server

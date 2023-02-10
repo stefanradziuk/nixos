@@ -125,12 +125,6 @@ in {
       ];
     };
 
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-
     tmux = {
       enable = true;
       clock24 = true;
