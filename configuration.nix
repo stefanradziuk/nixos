@@ -165,6 +165,8 @@ in {
 
   security.sudo.wheelNeedsPassword = false;
 
+  virtualisation.docker.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment = {
@@ -197,6 +199,7 @@ in {
         file
         git
         htop
+        iotop
         jq
         killall
         mons

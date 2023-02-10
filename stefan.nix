@@ -144,6 +144,7 @@ in {
         rustc
         rustfmt
 
+        qcachegrind
         qdirstat
 
         # kidneycaliper stuff
