@@ -182,7 +182,7 @@ alias gs='git stash'
 alias gsp='git stash pop'
 
 # Working Copy (w)
-alias gws='git status --ignore-submodules=$_git_status_ignore_submodules --short'
-alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules'
+alias gws='git status --ignore-submodules=$_git_status_ignore_submodules'
+alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules --short'
 alias gwd='git diff --no-ext-diff'
 alias gwD='git diff --no-ext-diff --word-diff'
