@@ -306,14 +306,17 @@ bindsym $mod+r mode "resize"
 # Theming
 font pango:Fira Mono 8
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #4e4e4e #4e4e4e #d0d0d0 #586e75   #d0d0d0
-client.focused_inactive #1c1c1c #1c1c1c #657b83 #d0d0d0   #d0d0d0
-client.unfocused        #1c1c1c #1c1c1c #657b83 #d0d0d0   #d0d0d0
-client.urgent           #d68787 #d68787 #d0d0d0 #d0d0d0   #d0d0d0
-client.placeholder      #0c0c0c #0c0c0c #d0d0d0 #d0d0d0   #d0d0d0
+set $bg       #1d2021
+set $bg-focus #3c3836
+set $urgent   #fb4934
+set $fg-focus #ebdbb2
+set $fg       #bdae93
 
-client.background       #ffffff
+# class                 border    backgr.   text      indicator child_border
+client.focused          $bg-focus $bg-focus $fg-focus $fg       $fg
+client.focused_inactive $bg       $bg       $fg       $fg       $fg
+client.unfocused        $bg       $bg       $fg       $fg       $fg
+client.urgent           $urgent   $urgent   $fg-focus $fg       $fg
 
 default_border          pixel 0
 default_floating_border pixel 0

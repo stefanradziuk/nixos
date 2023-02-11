@@ -1,5 +1,7 @@
+local contrast = "hard"
+local colors = require("gruvbox.palette").get_base_colors(vim.o.background, contrast)
+
 -- setup must be called before loading the colorscheme
--- Default options:
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
@@ -11,9 +13,16 @@ require("gruvbox").setup({
   invert_tabline = false,
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "hard", -- can be "hard", "soft" or empty string
+  contrast = contrast, -- can be "hard", "soft" or empty string
   palette_overrides = {},
-  overrides = {},
+  overrides = {
+    SignColumn  = {bg = colors.bg0},
+    StatusLine  = {fg = colors.bg0},
+    TabLine     = {bg = colors.bg0},
+    TabLineSel  = {bg = colors.bg0},
+    TabLineFill = {bg = colors.bg0},
+    Title       = {bg = colors.bg0},
+  },
   dim_inactive = false,
   transparent_mode = false,
 })
