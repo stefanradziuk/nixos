@@ -9,6 +9,9 @@
 ZPREZTODIR=~/.nix-profile/share/zsh-prezto
 [[ -s "${ZPREZTODIR}/init.zsh" ]] && source "${ZPREZTODIR}/init.zsh"
 
+# based on prezto's smiley
+PROMPT='$python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[prompt]}} %B%c%b %(?:%F{green}ツ %f:%F{yellow}ツ %f)'
+
 # set up z
 ZDIR=~/.nix-profile/share/zsh-z
 [[ -r "$ZDIR/zsh-z.plugin.zsh" ]] && source "$ZDIR/zsh-z.plugin.zsh"
