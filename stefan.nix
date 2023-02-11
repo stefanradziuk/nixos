@@ -51,6 +51,12 @@ in {
 
         st = pkgs.st.overrideAttrs (oldAttrs: rec {
           configFile = ./patches/st/config.def.h;
+          patches = [
+            (fetchpatch {
+              url = "https://st.suckless.org/patches/bold-is-not-bright/st-bold-is-not-bright-20190127-3be4cf1.diff";
+              sha256 = "sha256-IhrTgZ8K3tcf5HqSlHm3GTacVJLOhO7QPho6SCGXTHw=";
+            })
+          ];
           postPatch = oldAttrs.postPatch + ''
             cp ${configFile} config.def.h
           '';
