@@ -12,10 +12,9 @@ element-text, element-icon {
 }
 
 * {
-  space: #1c1c1c; //background
-  steel: #d0d0d0; //light texts
-  accent: #87afaf; //current selection #d68787
-  grey: #1c1c1c;
+  bg: #1d2021;
+  fg: #ebdbb2;
+  accent: #83a598;
   spacing: 0;
   background-color: #00000000;
   anchor: north;
@@ -44,8 +43,8 @@ element-text, element-icon {
 #message {
   border: 0;
   padding: 1em;
-  background-color: @space;
-  text-color: @steel;
+  background-color: @bg;
+  text-color: @fg;
 }
 
 // error box
@@ -53,7 +52,7 @@ element-text, element-icon {
   border: 0;
   text-color: #d68787;
   padding: 0.5em;
-  background-color: @space;
+  background-color: @bg;
 }
 
 #listview {
@@ -62,7 +61,7 @@ element-text, element-icon {
   padding: 0em;
   reverse: false;
   columns: 1;
-  background-color: @space;
+  background-color: @bg;
 }
 
 #element {
@@ -71,8 +70,8 @@ element-text, element-icon {
 }
 
 #element normal.normal {
-  text-color: @steel;
-  background-color: @space;
+  text-color: @fg;
+  background-color: @bg;
 }
 
 #element normal.urgent {
@@ -86,32 +85,32 @@ element-text, element-icon {
 }
 
 #element alternate.normal {
-  text-color: @steel;
-  background-color: @space;
+  text-color: @fg;
+  background-color: @bg;
 }
 
 #element alternate.urgent {
-  text-color: @space;
-  background-color: @steel;
+  text-color: @bg;
+  background-color: @fg;
 }
 
 #element alternate.active {
-  text-color: @space;
-  background-color: @steel;
+  text-color: @bg;
+  background-color: @fg;
 }
 
 #element selected.normal {
-  text-color: @space;
+  text-color: @bg;
   background-color: @accent;
 }
 
 #element selected.urgent {
-  text-color: @space;
+  text-color: @bg;
   background-color: @accent;
 }
 
 #element selected.active {
-  text-color: @space;
+  text-color: @bg;
   background-color: @accent;
 }
 
@@ -124,19 +123,19 @@ element-text, element-icon {
   spacing: 0;
   border: 0;
   padding: 0.5em;
-  background-color: @space;
+  background-color: @bg;
   index: 0;
 }
 
 #inputbar normal {
-  foreground-color: @space;
-  background-color: @space;
+  foreground-color: @bg;
+  background-color: @bg;
 }
 
 #sidebar {
   border: 2px;
   padding: 0.5em 1em;
-  background-color: @grey;
+  background-color: @bg;
   index: 10;
 }
 

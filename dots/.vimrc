@@ -2,15 +2,13 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-Plug 'stefanradziuk/seoul256.vim'
-" Plug 'noahfrederick/vim-noctu'
+" Plug 'morhetz/gruvbox'
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'chriskempson/base16-vim'
 Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-maximizer'
 Plug 'ARM9/arm-syntax-vim'
-" Plug 'RRethy/vim-hexokinase' " (css colors)
 
 " completion plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -48,11 +46,8 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
-" seoul256 (dark):
-"   Range:   233 (darkest) ~ 239 (lightest)
-"   Default: 237
-let g:seoul256_background=234
-colo seoul256
+" autocmd vimenter * ++nested colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'soft'
 
 let g:gitgutter_sign_added    = '+'
 let g:gitgutter_sign_modified = '~'
@@ -311,39 +306,39 @@ cabbrev Tabnew tabnew
 
 " signcolumn?
 " override the LineNr bar bg
-highlight LineNr          ctermfg=244   ctermbg=bg
-highlight CursorLineNr    ctermfg=244   ctermbg=bg
-
-highlight GitGutterAdd    ctermfg=2     ctermbg=bg
-highlight GitGutterDelete ctermfg=1     ctermbg=bg
-highlight GitGutterChange ctermfg=3     ctermbg=bg
-highlight! link GitGutterChangeDelete GitGutterDelete
-
-highlight NonText         ctermfg=244
-highlight ModeMsg         ctermfg=244
-" highlight ModeMsg        ctermfg=101
-
-" disable inactive tab underline
-highlight TabLine         cterm=none    ctermfg=244 ctermbg=bg
-highlight TabLineSel      ctermfg=fg    ctermbg=bg
-highlight TabLineFill     ctermfg=bg    ctermbg=bg
-highlight Title           ctermfg=244   ctermbg=bg
-
-highlight Search          cterm=none    ctermbg=fg  ctermfg=bg
-highlight IncSearch       cterm=reverse ctermbg=bg  ctermfg=fg
-
-highlight WildMenu        ctermfg=bg    ctermbg=fg
-
-highlight StatusLine      ctermfg=bg    ctermbg=fg
-"highlight StatusLine      ctermbg=fg
-"highlight StatusLine      ctermfg=236
-highlight StatusLineNC    ctermfg=bg    ctermbg=245
-"highlight StatusLineNC    ctermfg=236
-
-"highlight Visual ctermbg=13
-"highlight Visual ctermfg=bg
-
-highlight CocInlayHint    ctermfg=59
+" highlight LineNr          ctermfg=244   ctermbg=bg
+" highlight CursorLineNr    ctermfg=244   ctermbg=bg
+" 
+" highlight GitGutterAdd    ctermfg=2     ctermbg=bg
+" highlight GitGutterDelete ctermfg=1     ctermbg=bg
+" highlight GitGutterChange ctermfg=3     ctermbg=bg
+" highlight! link GitGutterChangeDelete GitGutterDelete
+" 
+" highlight NonText         ctermfg=244
+" highlight ModeMsg         ctermfg=244
+" " highlight ModeMsg        ctermfg=101
+" 
+" " disable inactive tab underline
+" highlight TabLine         cterm=none    ctermfg=244 ctermbg=bg
+" highlight TabLineSel      ctermfg=fg    ctermbg=bg
+" highlight TabLineFill     ctermfg=bg    ctermbg=bg
+" highlight Title           ctermfg=244   ctermbg=bg
+" 
+" highlight Search          cterm=none    ctermbg=fg  ctermfg=bg
+" highlight IncSearch       cterm=reverse ctermbg=bg  ctermfg=fg
+" 
+" highlight WildMenu        ctermfg=bg    ctermbg=fg
+" 
+" highlight StatusLine      ctermfg=bg    ctermbg=fg
+" "highlight StatusLine      ctermbg=fg
+" "highlight StatusLine      ctermfg=236
+" highlight StatusLineNC    ctermfg=bg    ctermbg=245
+" "highlight StatusLineNC    ctermfg=236
+" 
+" "highlight Visual ctermbg=13
+" "highlight Visual ctermfg=bg
+" 
+" highlight CocInlayHint    ctermfg=59
 
 " }}}
 
@@ -368,8 +363,6 @@ map Y yy
 
 " on <c-w>z make current window widest and tallest possible
 noremap <c-w>z <c-w>_ \| <c-w>\|
-
-command LightMode colorscheme seoul256-light | highlight CoqtailChecked ctermbg=251 | highlight CoqtailSent ctermbg=252
 
 " coqtail-style bindings for tex editing
 autocmd FileType tex nnoremap <C-l> <cmd>write<cr>

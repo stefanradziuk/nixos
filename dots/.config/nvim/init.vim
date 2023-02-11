@@ -6,3 +6,4 @@ set guicursor=
 set inccommand=nosplit
 
 lua require('treesitter-config')
+lua require('gruvbox-config')

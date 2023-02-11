@@ -1,5 +1,5 @@
-@define-color bg #1c1c1c;
-@define-color fg #ffffff;
+@define-color bg #1d2021;
+@define-color fg #ebdbb2;
 @define-color alert #f53c3c;
 @define-color focused #626262;
 
@@ -13,7 +13,7 @@
 
 window#waybar {
   background: @bg;
-  color: white;
+  color: @fg;
 }
 
 #window {
@@ -57,7 +57,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  color: white;
+  color: @fg;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
