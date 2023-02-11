@@ -16,6 +16,11 @@ PROMPT='$python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[pro
 ZDIR=~/.nix-profile/share/zsh-z
 [[ -r "$ZDIR/zsh-z.plugin.zsh" ]] && source "$ZDIR/zsh-z.plugin.zsh"
 
+REPORTTIME=5
+TIMEFMT=$'\e[0;37m%J  %U user %S system %P cpu %*E total\e[0m'
+
+setopt print_exit_value
+
 export NIX_PATH=nixpkgs=/home/stefan/nixpkgs:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
 
 export EDITOR='nvim'
@@ -189,3 +194,5 @@ alias gws='git status --ignore-submodules=$_git_status_ignore_submodules'
 alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules --short'
 alias gwd='git diff --no-ext-diff'
 alias gwD='git diff --no-ext-diff --word-diff'
+alias gwds='git diff --no-ext-diff --staged'
+alias gwDs='git diff --no-ext-diff --word-diff --staged'
