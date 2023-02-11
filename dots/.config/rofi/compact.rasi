@@ -14,7 +14,7 @@ element-text, element-icon {
 * {
   bg: #1d2021;
   fg: #ebdbb2;
-  accent: #83a598;
+  accent: #a89984;
   spacing: 0;
   background-color: #00000000;
   anchor: north;

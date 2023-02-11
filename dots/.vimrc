@@ -9,6 +9,7 @@ Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-maximizer'
 Plug 'ARM9/arm-syntax-vim'
+Plug 'godlygeek/tabular'
 
 " completion plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
