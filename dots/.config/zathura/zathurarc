@@ -6,41 +6,48 @@ set guioptions none
 
 set font "Fira Mono 11"
 
-set default-bg "#1c1c1c"
-set default-fg "#d0d0d0"
+set default-bg "#1d2021"
+set default-fg "#ebdbb2"
 
-set inputbar-bg "#1c1c1c"
-set inputbar-fg "#d0d0d0"
+set inputbar-bg "#1d2021"
+set inputbar-fg "#ebdbb2"
 
-set statusbar-bg "#1c1c1c"
-set statusbar-fg "#d0d0d0"
+set statusbar-bg "#1d2021"
+set statusbar-fg "#ebdbb2"
 
-set completion-bg "#1c1c1c"
-set completion-fg "#d0d0d0"
+set completion-bg "#1d2021"
+set completion-fg "#ebdbb2"
 
-set completion-group-bg "#1c1c1c"
-set completion-group-fg "#d0d0d0"
+set completion-group-bg "#1d2021"
+set completion-group-fg "#ebdbb2"
 
-set completion-highlight-bg "#ffafaf"
-set completion-highlight-fg "#1c1c1c"
+set completion-highlight-bg "#fabd2f"
+set completion-highlight-fg "#1d2021"
 
-set highlight-color "#add4fb"
-set highlight-active-color "#ffafaf"
+set highlight-transparency 0.4
+set highlight-color "#83a598"
+set highlight-active-color "#fabd2f"
 
-set notification-bg "#1c1c1c"
-set notification-fg "#d0d0d0"
+set notification-bg "#1d2021"
+set notification-fg "#ebdbb2"
 
-set notification-error-bg "#ffafaf"
-set notification-error-fg "#1c1c1c"
+set notification-error-bg "#d3869b"
+set notification-error-fg "#1d2021"
 
-set notification-warning-bg "#ffafaf"
-set notification-warning-fg "#1c1c1c"
+set notification-warning-bg "#d3869b"
+set notification-warning-fg "#1d2021"
 
 set recolor-keephue true
-set recolor-darkcolor "#ffffff" # alt 1c1c1c
-set recolor-lightcolor "#1c1c1c"
+set recolor-darkcolor "#ebdbb2"
+set recolor-lightcolor "#1d2021"
 
-set render-loading-bg "#1c1c1c"
-set render-loading-fg "#d0d0d0"
+set render-loading-bg "#1d2021"
+set render-loading-fg "#ebdbb2"
 
 set zoom-max 2000
+
+set index-fg "#ebdbb2"
+set index-bg "#1d2021"
+set index-active-fg "#1d2021"
+set index-active-bg "#fabd2f"
+
