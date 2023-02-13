@@ -1,6 +1,10 @@
 local contrast = "hard"
 local colors = require("gruvbox.palette").get_base_colors(vim.o.background, contrast)
 
+colors["dark0_hard"] = "#1d2021"
+colors["dark0"] = "#282828"
+colors["dark0_soft"] = "#32302f"
+
 -- setup must be called before loading the colorscheme
 require("gruvbox").setup({
   undercurl = true,
@@ -16,11 +20,11 @@ require("gruvbox").setup({
   contrast = contrast, -- can be "hard", "soft" or empty string
   palette_overrides = {},
   overrides = {
-    CoqtailChecked    = {bg = colors.bg2},
-    CoqtailSent       = {bg = colors.bg1},
+    CoqtailChecked    = {bg = colors.dark0_soft},
+    CoqtailSent       = {bg = colors.dark0},
 
-    GitGutterAdd      = {fg = colors.yellow},
-    GitGutterChange   = {fg = colors.green},
+    GitGutterAdd      = {fg = colors.green},
+    GitGutterChange   = {fg = colors.yellow},
     GitGutterDelete   = {fg = colors.red},
 
     GruvboxAquaSign   = {bg = colors.bg0},

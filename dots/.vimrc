@@ -300,6 +300,7 @@ cabbrev Wq wq
 
 cabbrev tn     tabnew
 cabbrev Tabnew tabnew
+cabbrev tm     tabmove
 
 " }}}
 
