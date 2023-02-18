@@ -8,4 +8,10 @@ first_available=$(awk '{ if (NR != $0) { print NR ; exit 0 } }' <<< "$workspace_
 # if no number was skipped, use max workspace number + 1
 [[ -z "$first_available" ]] && first_available=$(($(tail -n 1 <<< "$workspace_nums") + 1))
 
-i3-msg -t run_command "move window to workspace $first_available; workspace $first_available" > /dev/null
+CHANGE_WORKSPACE_CMD="workspace $first_available"
+
+if [[ "${1:-}" = "--no-switch" ]]; then
+  CHANGE_WORKSPACE_CMD=""
+fi
+
+i3-msg -t run_command "move window to workspace $first_available; $CHANGE_WORKSPACE_CMD" > /dev/null

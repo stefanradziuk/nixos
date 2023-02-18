@@ -225,6 +225,7 @@ bindsym $mod+c exec python $HOME/bin/cycle_workspace.py
 bindsym $mod+x exec i3-renumber-once
 # mod+` (similar to tmux <C-a>!)
 bindsym $mod+grave exec i3-bang
+bindsym $mod+Shift+grave exec i3-bang --no-switch
 
 bindsym $mod+t exec i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻\n📑' | rofi -dmenu -p 'workspace tag')"
 
