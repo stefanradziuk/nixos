@@ -54,25 +54,12 @@ in {
         });
 
         texlive = pkgs.texlive.combined.scheme-full;
-        # TODO nix env for tex projects
-        # texlive = pkgs.texlive.combine {
-        #   inherit (pkgs.texlive) scheme-medium titlesec fira fontaxes enumitem svg svgcolor svg-inkscape;
-        #   # xournalpp tex support - TODO upstream?
-        #   inherit (pkgs.texlive) scontents standalone varwidth;
-        # };
-
-        discord = pkgs.discord.overrideAttrs (_: rec {
-          version = "0.0.22";
-          src = fetchurl {
-            url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-            sha256 = "sha256-F1xzdx4Em6Ref7HTe9EH7whx49iFc0DFpaQKdFquq6c=";
-          };
-        });
 
       in [
         acpilight
         cinnamon.nemo
         colorpicker
+        ccrypt
         diff-so-fancy
         difftastic
         direnv
