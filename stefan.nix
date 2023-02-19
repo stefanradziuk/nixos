@@ -31,21 +31,12 @@ in {
 
     packages = with pkgs; (
       let
-        google-chrome-beta = pkgs.google-chrome-beta.override {
-          commandLineArgs = [
-            "--force-device-scale-factor=1.0"
-            "--password-store=basic"
-            "--force-dark-mode"
-            "--enable-features=WebUIDarkMode"
-          ];
-        };
-
         google-chrome = pkgs.google-chrome.override {
           commandLineArgs = [
             "--force-device-scale-factor=1.0"
             "--password-store=basic"
             "--force-dark-mode"
-            "--enable-features=WebUIDarkMode"
+            "--enable-features=WebUIDarkMode,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization"
           ];
         };
 
@@ -95,7 +86,6 @@ in {
         gh
         gnumake
         google-chrome
-        google-chrome-beta
         gparted
         helix
         imagemagick

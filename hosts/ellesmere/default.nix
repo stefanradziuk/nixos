@@ -9,11 +9,19 @@
     fsType = "vfat";
   };
 
-  programs.steam = {
+  # https://nixos.wiki/wiki/Accelerated_Video_Playback
+  hardware.opengl = {
     enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    # XXX are any of these redundant?
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
   };
+
+  programs.steam.enable = true;
 
   home-manager.users.stefan.home.packages = (with pkgs; [
     vcv-rack
