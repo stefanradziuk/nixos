@@ -36,7 +36,10 @@ in {
             "--force-device-scale-factor=1.0"
             "--password-store=basic"
             "--force-dark-mode"
-            "--enable-features=WebUIDarkMode,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization"
+            # --disable-gpu-vsync seems to fix ui freezes
+            # (without turning off hardware acceleration completely)
+            "--disable-gpu-vsync"
+            "--enable-features=WebUIDarkMode"
           ];
         };
 
