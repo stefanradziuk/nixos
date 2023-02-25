@@ -21,7 +21,7 @@ require("gruvbox").setup({
   palette_overrides = {},
   overrides = {
     CoqtailChecked    = {bg = colors.dark0_soft},
-    CoqtailSent       = {bg = colors.dark0},
+    CoqtailSent       = {bg = colors.neutral_purple},
 
     GitGutterAdd      = {fg = colors.green},
     GitGutterChange   = {fg = colors.yellow},
