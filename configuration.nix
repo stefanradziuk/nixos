@@ -174,6 +174,7 @@ in {
           i3ipc
           ipython
           numpy
+          pandas
           pyyaml  # TODO do per-project derivations
           isort
           black
