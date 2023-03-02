@@ -10,7 +10,9 @@ ZPREZTODIR=~/.nix-profile/share/zsh-prezto
 [[ -s "${ZPREZTODIR}/init.zsh" ]] && source "${ZPREZTODIR}/init.zsh"
 
 # based on prezto's smiley
-PROMPT='%T $python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[prompt]}} %B%c%b %(?:%F{green}ツ %f:%F{yellow}ツ %f)'
+if [[ "$TERM" != linux ]]; then
+  PROMPT='%T $python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[prompt]}} %B%c%b %(?:%F{green}ツ %f:%F{yellow}ツ %f)'
+fi
 
 # set up z
 ZDIR=~/.nix-profile/share/zsh-z
@@ -21,7 +23,7 @@ TIMEFMT=$'\e[0;37m%J  %U user %S system %P cpu %*E total\e[0m'
 
 setopt print_exit_value
 
-export NIX_PATH=nixpkgs=/home/stefan/nixpkgs:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
+export NIX_PATH=nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
 
 export EDITOR='nvim'
 export BROWSER='google-chrome-beta'
@@ -29,6 +31,7 @@ export XDG_DATA_HOME=/home/stefan/.local/share
 export XDG_CONFIG_HOME="$HOME/.config"
 
 unsetopt correct
+unsetopt beep
 
 alias l="exa -laa"
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 16 | tr -d '\n'; echo"
@@ -46,7 +49,6 @@ alias git="noglob git"
 alias nix="noglob nix"
 alias diff="wdiff"
 alias ayy="yay"
-alias sicstus="rlwrap /usr/local/sicstus4.4.1/bin/sicstus"
 alias pyton="python"
 alias pytonne="python"
 alias copy="xclip -selection clipboard"

@@ -114,7 +114,6 @@ zstyle ':prezto:module:history-substring-search:color' not-found ''
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'smiley'
-# zstyle ':prezto:module:prompt' theme 'my_smiley'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
