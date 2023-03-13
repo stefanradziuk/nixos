@@ -83,9 +83,11 @@ in {
         lsof
         # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
         # kitty
+        ncdu
         nodePackages.bash-language-server
         parallel
         psst
+        pv
         rofi
         rofimoji
         shellcheck
