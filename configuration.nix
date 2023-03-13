@@ -196,6 +196,7 @@ in {
         feh
         file
         git
+        gnupg
         htop
         iotop
         jq
