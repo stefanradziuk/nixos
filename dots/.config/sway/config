@@ -227,7 +227,7 @@ bindsym $mod+x exec i3-renumber-once
 bindsym $mod+grave exec i3-bang
 bindsym $mod+Shift+grave exec i3-bang --no-switch
 
-bindsym $mod+t exec i3_tag_current.py "$(echo '\n🐓\n🎷\n👨‍💻\n📑\n❄️' | rofi -dmenu -p 'workspace tag')"
+bindsym $mod+t exec i3-tag-current "$(echo '\n🐓\n🎷\n👨‍💻\n📑\n❄️' | rofi -dmenu -p 'workspace tag')"
 
 # Layout stuff:
 bindsym $mod+v splitv

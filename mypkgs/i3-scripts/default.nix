@@ -4,7 +4,7 @@
 
 let
   python3 = pkgs.python3.withPackages (python-packages:
-  with python-packages; [ i3ipc ]
+    with python-packages; [ i3ipc ]
   );
 
 in stdenv.mkDerivation {
