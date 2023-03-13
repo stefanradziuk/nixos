@@ -7,7 +7,7 @@ x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
 image/jpeg=feh.desktop
 image/png=feh.desktop
-application/pdf=userapp-zathura-X86DO1.desktop
+application/pdf=google-chrome.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/mailto=google-chrome.desktop
@@ -15,3 +15,6 @@ x-scheme-handler/mailto=google-chrome.desktop
 [Added Associations]
 image/jpeg=feh.desktop;
 image/png=feh.desktop;
+application/pdf=userapp-zathura-1DF701.desktop;userapp-xournalpp-J4QG11.desktop;google-chrome.desktop;
+
+[Removed Associations]
