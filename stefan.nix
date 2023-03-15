@@ -111,6 +111,7 @@ in {
 
         coq
         ocaml
+        ocamlPackages.utop
         emacs-gtk
         agda
         wabt
