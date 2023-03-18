@@ -1,8 +1,20 @@
-{ pkgs, ... }:
+{ lib
+, pkgs
+, ...
+}:
 
-{
+let
+  google-chrome = import ../../common/google-chrome.nix {
+    inherit lib pkgs;
+    disableGpuVsync = true;
+  };
+
+in {
   networking.hostName = "ellesmere";
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../common/configuration.nix
+  ];
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
@@ -24,7 +36,8 @@
   programs.steam.enable = true;
 
   home-manager.users.stefan.home.packages = (with pkgs; [
-    vcv-rack
     audacity
+    google-chrome
+    vcv-rack
   ]);
 }

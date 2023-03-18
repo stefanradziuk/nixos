@@ -27,24 +27,12 @@ in {
 
   home = {
     stateVersion = "21.11";
-    file = mapDir ./dots;
+    file = mapDir ../dots;
 
     packages = with pkgs; (
       let
-        google-chrome = pkgs.google-chrome.override {
-          commandLineArgs = [
-            "--force-device-scale-factor=1.0"
-            "--password-store=basic"
-            "--force-dark-mode"
-            # --disable-gpu-vsync seems to fix ui freezes
-            # (without turning off hardware acceleration completely)
-            "--disable-gpu-vsync"
-            "--enable-features=WebUIDarkMode"
-          ];
-        };
-
         st = pkgs.st.overrideAttrs (oldAttrs: rec {
-          configFile = ./patches/st/config.def.h;
+          configFile = ../patches/st/config.def.h;
           patches = [
             (fetchpatch {
               url = "https://st.suckless.org/patches/bold-is-not-bright/st-bold-is-not-bright-20190127-3be4cf1.diff";
@@ -75,7 +63,6 @@ in {
         gcc
         gh
         gnumake
-        google-chrome
         gparted
         helix
         imagemagick
@@ -158,7 +145,7 @@ in {
         lxappearance
         phinger-cursors
         # autorandr?
-        # (import ./my-pkgs/autorandr-rs.nix)
+        # (import ../my-pkgs/autorandr-rs.nix)
       ]
     );
   };

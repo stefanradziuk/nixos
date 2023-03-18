@@ -1,6 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# TODO break this up into separate files?
 
 { config
 , home-manager
@@ -12,7 +10,7 @@
 let
   inherit (pkgs) callPackage;
   useXserver = true;
-  mypkgs = pkgs.callPackage ./mypkgs {};
+  mypkgs = pkgs.callPackage ../mypkgs {};
 in {
   imports = [ home-manager.nixosModule ];
 
@@ -37,7 +35,7 @@ in {
       grub = {
         device = "nodev";
         efiSupport = true;
-        splashImage = ./wallpapers/thonk.png;
+        splashImage = ../wallpapers/thonk.png;
         configurationLimit = 20;
       };
     };
