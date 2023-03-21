@@ -57,12 +57,6 @@ alias colorpicker="colorpicker --short --preview"
 
 bindkey -v
 
-# gui-like ctrl word jumping
-bindkey "^[Od"	backward-word
-bindkey "^[Oc"	forward-word
-bindkey "^H"	backward-kill-word
-bindkey "^[[3^"	kill-word
-
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
 
@@ -82,6 +76,11 @@ if [ -n "${commands[fzf-share]}" ]; then
     --nocolor \
     --hidden \
     -g ""'
+
+  # unbind alt/esc-c (fzf-cd-widget), clashes with esc-c from vi mode
+  bindkey -M emacs -r '\ec'
+  bindkey -M vicmd -r '\ec'
+  bindkey -M viins -r '\ec'
 fi
 
 source "$HOME/.secrets"
@@ -95,12 +94,6 @@ gi() {
 
 mann() {
   curl "cheat.sh/$1" | bat
-}
-
-mailman_sync() {
-  echo "docsoc's password: "
-  read -sr
-  echo "$REPLY" | ssh docsoc 'mailmansub/run.sh'
 }
 
 # touches a file, creating parent dirs as necessary
