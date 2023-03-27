@@ -66,6 +66,25 @@ bindsym $mod+Shift+n exec --no-startup-id /home/stefan/programming/rofimoji/src/
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id $HOME/bin/sscrot -c
 
+# volume controls
+bindsym XF86AudioLowerVolume exec pulsemixer --unmute --change-volume -5
+bindsym XF86AudioRaiseVolume exec pulsemixer --unmute --change-volume +5
+bindsym XF86AudioMute        exec pulsemixer --toggle-mute
+
+# brightness controls under volume controls
+bindsym Ctrl+XF86AudioLowerVolume       exec xbacklight -5  -fps 60
+bindsym Ctrl+XF86AudioRaiseVolume       exec xbacklight +5  -fps 60
+bindsym Ctrl+Shift+XF86AudioLowerVolume exec xbacklight -25 -fps 60
+bindsym Ctrl+Shift+XF86AudioRaiseVolume exec xbacklight +25 -fps 60
+
+# brightness controls (regular/coarse/fine)
+bindsym XF86MonBrightnessDown           exec xbacklight -5  -fps 60
+bindsym XF86MonBrightnessUp             exec xbacklight +5  -fps 60
+bindsym Ctrl+XF86MonBrightnessDown      exec xbacklight -1  -fps 60
+bindsym Ctrl+XF86MonBrightnessUp        exec xbacklight +1  -fps 60
+bindsym Shift+XF86MonBrightnessDown     exec xbacklight -25 -fps 60
+bindsym Shift+XF86MonBrightnessUp       exec xbacklight +25 -fps 60
+
 # lockscreen
 # bindsym Mod1+k exec --no-startup-id i3lock -ui $HOME/wallpapers/lock/stalenhag_lock.png
 set $Locker $HOME/bin/lockme
