@@ -89,6 +89,9 @@ in {
         zsh-prezto
         zsh-z
 
+        linuxPackages_latest.perf
+        flamegraph
+
         graphviz
 
         ghc
