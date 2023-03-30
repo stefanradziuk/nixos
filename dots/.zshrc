@@ -77,11 +77,15 @@ if [ -n "${commands[fzf-share]}" ]; then
     --hidden \
     -g ""'
 
-  # unbind alt/esc-c (fzf-cd-widget), clashes with esc-c from vi mode
-  bindkey -M emacs -r '\ec'
-  bindkey -M vicmd -r '\ec'
-  bindkey -M viins -r '\ec'
 fi
+
+# unbind bindings clashing with vi mode
+# alt/esc-c (fzf-cd-widget)
+bindkey -M vicmd -r '^[c'
+bindkey -M viins -r '^[c'
+# alt/esc-e (expand-cmd-path)
+bindkey -M vicmd -r '^[E'
+bindkey -M viins -r '^[E'
 
 source "$HOME/.secrets"
 
