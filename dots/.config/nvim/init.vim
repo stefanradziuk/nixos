@@ -5,5 +5,8 @@ source ~/.vimrc
 set guicursor=
 set inccommand=nosplit
 
-lua require('treesitter-config')
 lua require('gruvbox-config')
+lua require('lsp-config')
+lua require('treesitter-config')
+lua require('telescope-config')
+lua require('Comment').setup()

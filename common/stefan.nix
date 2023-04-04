@@ -89,6 +89,12 @@ in {
         zsh-prezto
         zsh-z
 
+        # nvim plugins
+        tree-sitter
+        texlab
+        coqPackages.coq-lsp
+        sumneko-lua-language-server
+
         linuxPackages_latest.perf
         flamegraph
 
