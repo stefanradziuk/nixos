@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# TODO doesnt work as expected with multi mon
-workspace_nums=$(i3-msg -t get_workspaces | jq '.[].num')
+# TODO use '.[].name'?
+# currently doesn't work well with 'tagged' workspaces (named '1:foo')
+workspace_nums=$(i3-msg -t get_workspaces | jq '.[].num' | sort)
+echo "workspace_nums: '$workspace_nums'"
 
 first_available=$(awk '{ if (NR != $0) { print NR ; exit 0 } }' <<< "$workspace_nums")
 # if no number was skipped, use max workspace number + 1
