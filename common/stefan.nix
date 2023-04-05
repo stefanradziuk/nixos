@@ -71,7 +71,6 @@ in {
         # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
         # kitty
         ncdu
-        nodePackages.bash-language-server
         parallel
         psst
         pv
@@ -89,11 +88,13 @@ in {
         zsh-prezto
         zsh-z
 
-        # nvim plugins
+        # nvim plugins (TODO separate module?)
         tree-sitter
         texlab
         coqPackages.coq-lsp
         sumneko-lua-language-server
+        haskell-language-server
+        nodePackages.bash-language-server
 
         linuxPackages_latest.perf
         flamegraph
@@ -101,7 +102,6 @@ in {
         graphviz
 
         ghc
-        haskell-language-server
 
         pypy3
 
