@@ -23,7 +23,7 @@ lsp.configure('lua_ls', {
 
 lsp.on_attach(function(client, bufnr)
   -- lsp.default_keymaps({buffer = bufnr})
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -38,12 +38,12 @@ end)
 
 local cmp = require('cmp')
 
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({select = true}),
-  ['<CR>'] = cmp.mapping.confirm({select = true}),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
 
@@ -66,10 +66,10 @@ lsp.setup()
 require('lspconfig.configs').coq_lsp = {
   default_config = {
     name = 'coq-lsp',
-    cmd = {'coq-lsp'},
-    filetypes = {'coq'},
+    cmd = { 'coq-lsp' },
+    filetypes = { 'coq' },
     root_dir = function() return require('lspconfig.util').find_git_ancestor() or '.' end
   }
 }
 
-require('lspconfig').coq_lsp.setup({single_file_support = true})
+require('lspconfig').coq_lsp.setup({ single_file_support = true })
