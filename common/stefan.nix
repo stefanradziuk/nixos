@@ -94,6 +94,7 @@ in {
         texlive
         wtype
         xdotool
+        xorg.xeyes
         zathura
         zip
         zsh-prezto
