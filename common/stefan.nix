@@ -46,6 +46,17 @@ in {
 
         texlive = pkgs.texlive.combined.scheme-full;
 
+        # waiting for github.com/junegunn/fzf/issues/3235 to be released
+        fzf = pkgs.fzf.overrideAttrs (_: {
+          version = "pre-0.40.0";
+          src = fetchFromGitHub {
+            owner = "junegunn";
+            repo = "fzf";
+            rev = "f1a96296525975ea7d4c45aebc4fed5117cecb72";
+            hash = "sha256-7e4jC/Lm+nZ9u8hG/Fcls3eIctzIU7qJh78qkmKoko4=";
+          };
+        });
+
       in [
         acpilight
         cinnamon.nemo
