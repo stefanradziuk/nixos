@@ -41,6 +41,8 @@ in {
     };
 
     supportedFilesystems = [ "ntfs" ];
+
+    kernelModules = [ "i2c-dev" ];
   };
 
   networking.networkmanager = {

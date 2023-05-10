@@ -62,6 +62,7 @@ in {
         cinnamon.nemo
         colorpicker
         ccrypt
+        ddcutil
         diff-so-fancy
         difftastic
         direnv
