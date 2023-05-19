@@ -5,6 +5,7 @@ lsp.preset('recommended')
 lsp.setup_servers({
   'bashls',
   'lua_ls',
+  'pyright',
   'rust_analyzer',
   'texlab',
 })
@@ -33,6 +34,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>qf", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+  -- TODO unbind this from Shift-Backspace
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
@@ -62,14 +64,3 @@ cmp.setup({
 })
 
 lsp.setup()
-
-require('lspconfig.configs').coq_lsp = {
-  default_config = {
-    name = 'coq-lsp',
-    cmd = { 'coq-lsp' },
-    filetypes = { 'coq' },
-    root_dir = function() return require('lspconfig.util').find_git_ancestor() or '.' end
-  }
-}
-
-require('lspconfig').coq_lsp.setup({ single_file_support = true })

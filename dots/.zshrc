@@ -14,9 +14,8 @@ if [[ "$TERM" != linux ]]; then
   PROMPT='%T $python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[prompt]}} %B%c%b %(?:%F{green}ツ %f:%F{yellow}ツ %f)'
 fi
 
-# set up z
-ZDIR=~/.nix-profile/share/zsh-z
-[[ -r "$ZDIR/zsh-z.plugin.zsh" ]] && source "$ZDIR/zsh-z.plugin.zsh"
+# set up zoxide
+eval "$(zoxide init zsh)"
 
 REPORTTIME=5
 TIMEFMT=$'\e[0;37m%J  %U user %S system %P cpu %*E total\e[0m'
@@ -54,6 +53,7 @@ alias pytonne="python"
 alias copy="xclip -selection clipboard"
 alias cate="cksum"
 alias colorpicker="colorpicker --short --preview"
+alias rm="nocorrect rm -I"
 
 bindkey -v
 

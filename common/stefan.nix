@@ -59,6 +59,7 @@ in {
 
       in [
         acpilight
+        btop
         cinnamon.nemo
         colorpicker
         ccrypt
@@ -98,8 +99,8 @@ in {
         xorg.xeyes
         zathura
         zip
+        zoxide
         zsh-prezto
-        zsh-z
 
         # nvim plugins (TODO separate module?)
         tree-sitter
@@ -108,6 +109,7 @@ in {
         sumneko-lua-language-server
         haskell-language-server
         nodePackages.bash-language-server
+        nodePackages.pyright
 
         linuxPackages_latest.perf
         flamegraph

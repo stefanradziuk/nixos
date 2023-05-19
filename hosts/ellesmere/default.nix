@@ -38,6 +38,7 @@ in {
   home-manager.users.stefan.home.packages = (with pkgs; [
     audacity
     google-chrome
-    vcv-rack
+    krita
+    # vcv-rack
   ]);
 }

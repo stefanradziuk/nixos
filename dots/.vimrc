@@ -82,6 +82,8 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " set* {{{
 
 syntax on
+" prevents buggy syntax highlighting in large files
+syntax sync minlines=3000
 set nocompatible
 filetype plugin indent on
 
@@ -113,6 +115,7 @@ set wildmenu
 
 set lazyredraw
 set timeoutlen=1000 ttimeoutlen=0
+set updatetime=100
 
 " find (and replace) settings
 set ignorecase
