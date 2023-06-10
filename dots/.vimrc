@@ -216,4 +216,8 @@ autocmd FileType tex inoremap <C-l> <cmd>write<cr>
 " prolog syntax highlighting for asp
 autocmd BufEnter,BufNew *.lp set syntax=prolog
 
+" wast syntax highlighting and commentstring for wat
+autocmd BufEnter,BufNew *.wat set syntax=wast
+autocmd BufEnter,BufNew *.wat set commentstring=(;%s;)
+
 " vim:foldmethod=marker:foldlevel=0
