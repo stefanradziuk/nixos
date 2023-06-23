@@ -209,9 +209,10 @@ map Y yy
 " on <c-w>z make current window widest and tallest possible
 noremap <c-w>z <c-w>_ \| <c-w>\|
 
-" coqtail-style bindings for tex editing
+" coqtail-style bindings and spellcheck for tex editing
 autocmd FileType tex nnoremap <C-l> <cmd>write<cr>
 autocmd FileType tex inoremap <C-l> <cmd>write<cr>
+autocmd FileType tex set spell
 
 " prolog syntax highlighting for asp
 autocmd BufEnter,BufNew *.lp set syntax=prolog

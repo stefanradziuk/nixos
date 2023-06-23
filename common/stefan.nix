@@ -91,6 +91,8 @@ in {
         zoxide
         zsh-prezto
 
+        diff-pdf
+
         # nvim plugins (TODO separate module?)
         tree-sitter
         texlab
