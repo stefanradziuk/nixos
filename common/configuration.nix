@@ -171,6 +171,33 @@ in {
       let
         python3 = pkgs.python3.withPackages (python-packages:
         with python-packages; [
+          (alectryon.overrideAttrs (oldAttrs: rec {
+            version = "1.4.0";
+
+            src = fetchFromGitHub {
+              owner = "cpitclaudel";
+              repo = "alectryon";
+              rev = "11e8cdc8395d66858baa7371b6cf8e827ca38f4a";
+              hash = "sha256-WT68xSYxqydk53++nYmJiBI47ZyyAnNK5DBP/KZPVZU=";
+            };
+
+
+            # propagatedBuildInputs = [
+            #   (pygments.overrideAttrs (oldAttrs: rec {
+            #     version = "2.11.0";
+            #     src = fetchPypi {
+            #       pname = "Pygments";
+            #       inherit version;
+            #       hash = "sha256-URMPd4oCjy0ZwUP84Aztb4sQ9ybhdZnX6RspD2y82gw=";
+            #     };
+            #   }))
+            #   dominate
+            #   beautifulsoup4
+            #   docutils
+            #   sphinx
+            # ];
+          }))
+
           i3ipc
           ipython
           numpy
