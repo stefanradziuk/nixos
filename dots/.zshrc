@@ -9,11 +9,6 @@
 ZPREZTODIR=~/.nix-profile/share/zsh-prezto
 [[ -s "${ZPREZTODIR}/init.zsh" ]] && source "${ZPREZTODIR}/init.zsh"
 
-# based on prezto's smiley
-if [[ "$TERM" != linux ]]; then
-  PROMPT='%T $python_info[virtualenv]$ruby_info[version]${git_info:+${(e)git_info[prompt]}} %B%c%b %(?:%F{green}ツ %f:%F{yellow}ツ %f)'
-fi
-
 # set up zoxide
 eval "$(zoxide init zsh)"
 
@@ -194,3 +189,5 @@ alias gws='git status --ignore-submodules=$_git_status_ignore_submodules'
 alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules --short'
 alias gwd='git diff --no-ext-diff'
 alias gwD='git diff --no-ext-diff --word-diff'
+
+eval "$(starship init zsh)"

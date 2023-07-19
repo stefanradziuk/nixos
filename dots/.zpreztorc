@@ -39,8 +39,7 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'completion' \
-  'utility' \
-  'prompt'
+  'utility'
 
 #
 # Autosuggestions
@@ -224,5 +223,4 @@ zstyle ':prezto:module:prompt' theme 'smiley'
 zstyle ':prezto:module:utility' safe-ops 'no'
 
 zstyle ':prezto:module:utility' correct 'yes'
-
 

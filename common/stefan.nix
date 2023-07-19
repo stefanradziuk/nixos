@@ -91,6 +91,8 @@ in {
         zoxide
         zsh-prezto
 
+        starship
+
         diff-pdf
 
         # nvim plugins (TODO separate module?)

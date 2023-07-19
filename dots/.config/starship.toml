@@ -1,0 +1,31 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$time$all'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[line_break]
+disabled = true
+
+[character]
+format = '$symbol '
+success_symbol = '[ツ](green)'
+error_symbol = '[ツ](yellow)'
+vimcmd_symbol = '[ツ](blue)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = ''
+# rust chrono: %R Hour-minute format. Same to %H:%M.
+time_format = '%R'
+
+# 'via V' coming from *.v files
+[vlang]
+disabled = true
