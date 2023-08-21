@@ -4,10 +4,10 @@
 format = '$time$all'
 
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 format = '$symbol '
@@ -15,9 +15,12 @@ success_symbol = '[ツ](green)'
 error_symbol = '[ツ](yellow)'
 vimcmd_symbol = '[ツ](blue)'
 
-# Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
+[cmd_duration]
+show_notifications = true
+min_time_to_notify = 30_000  # 30 s
 
 [time]
 disabled = false
