@@ -123,7 +123,8 @@ in {
 
         clingo
 
-        teams
+        # https://github.com/NixOS/nixpkgs/issues/240418
+        # teams
         xournalpp
         discord
         zoom-us
