@@ -98,7 +98,6 @@ in {
         # nvim plugins (TODO separate module?)
         tree-sitter
         texlab
-        coqPackages.coq-lsp
         sumneko-lua-language-server
         haskell-language-server
         nodePackages.bash-language-server
@@ -113,11 +112,9 @@ in {
 
         pypy3
 
-        coq
         ocaml
         ocamlPackages.utop
         emacs-gtk
-        agda
         wabt
         rlwrap
 
