@@ -229,7 +229,7 @@ in {
     );
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     corefonts  # Microsoft fonts
     fira-mono
     # XXX "FiraMono" doesn't install anything?
