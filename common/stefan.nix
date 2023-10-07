@@ -110,6 +110,8 @@ in {
 
         ghc
 
+        clang-tools
+
         pypy3
 
         ocaml

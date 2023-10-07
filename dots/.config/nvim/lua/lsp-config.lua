@@ -4,6 +4,7 @@ lsp.preset('recommended')
 
 lsp.setup_servers({
   'bashls',
+  'clangd',
   'lua_ls',
   'pyright',
   'rust_analyzer',
