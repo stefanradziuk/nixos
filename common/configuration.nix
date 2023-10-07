@@ -191,7 +191,7 @@ in {
         };
       in [
         bat
-        exa
+        eza
         fd
         feh
         file
