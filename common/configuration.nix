@@ -52,7 +52,7 @@ in {
   };
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = "Europe/London";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
