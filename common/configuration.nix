@@ -220,7 +220,7 @@ in {
       ] ++ lib.optionals useXserver [
         i3lock-color
         picom-next
-        polybar
+        # polybar
         redshift
         scrot
         slop
