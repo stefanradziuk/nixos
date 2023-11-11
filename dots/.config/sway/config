@@ -334,4 +334,8 @@ bar swaybar_command waybar
 
 exec dbus-sway-environment
 
+# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+# TODO try this too? https://bbs.archlinux.org/viewtopic.php?id=236020
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 include /etc/sway/config.d/*

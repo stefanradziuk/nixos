@@ -101,6 +101,7 @@ in {
 
   # https://www.reddit.com/r/NixOS/comments/s9ytrg/xdgdesktopportalwlr_on_sway_causes_20_seconds/
   # https://discourse.nixos.org/t/xdg-desktop-portal-not-working-on-wayland-while-kde-is-installed/20919
+  # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
   # services.dbus.enable = true;
 
   programs = {
