@@ -34,6 +34,7 @@ in {
       efi.canTouchEfiVariables = true;
       grub = {
         device = "nodev";
+        useOSProber = true;
         efiSupport = true;
         splashImage = ../wallpapers/thonk.png;
         configurationLimit = 20;

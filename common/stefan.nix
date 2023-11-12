@@ -91,6 +91,8 @@ in {
         zoxide
         zsh-prezto
 
+        gptfdisk
+
         starship
 
         diff-pdf
