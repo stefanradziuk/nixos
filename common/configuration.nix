@@ -35,6 +35,7 @@ in {
       grub = {
         device = "nodev";
         useOSProber = true;
+        default = "saved";  # remember most recent selection
         efiSupport = true;
         splashImage = ../wallpapers/thonk.png;
         configurationLimit = 20;
