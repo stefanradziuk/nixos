@@ -18,7 +18,5 @@ in {
     fsType = "vfat";
   };
 
-  boot.loader.grub.useOSProber = true;
-
   home-manager.users.stefan.home.packages = [ google-chrome ];
 }
