@@ -246,4 +246,8 @@ in {
 
   # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
   environment.variables.GTK_USE_PORTAL = "0";
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 }
