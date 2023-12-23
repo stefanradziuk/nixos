@@ -76,7 +76,7 @@ in {
         parallel
         psst
         pv
-        rofi
+        rofi-wayland
         rofimoji
         shellcheck
         slack
