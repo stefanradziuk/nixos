@@ -33,7 +33,7 @@ Plug 'whonore/Coqtail'
 " telescope + deps
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 
 " Initialize plugin system
 call plug#end()
@@ -153,36 +153,36 @@ cabbrev tm     tabmove
 " override the LineNr bar bg
 " highlight LineNr          ctermfg=244   ctermbg=bg
 " highlight CursorLineNr    ctermfg=244   ctermbg=bg
-" 
+"
 " highlight GitGutterAdd    ctermfg=2     ctermbg=bg
 " highlight GitGutterDelete ctermfg=1     ctermbg=bg
 " highlight GitGutterChange ctermfg=3     ctermbg=bg
 " highlight! link GitGutterChangeDelete GitGutterDelete
-" 
+"
 " highlight NonText         ctermfg=244
 " highlight ModeMsg         ctermfg=244
 " " highlight ModeMsg        ctermfg=101
-" 
+"
 " " disable inactive tab underline
 " highlight TabLine         cterm=none    ctermfg=244 ctermbg=bg
 " highlight TabLineSel      ctermfg=fg    ctermbg=bg
 " highlight TabLineFill     ctermfg=bg    ctermbg=bg
 " highlight Title           ctermfg=244   ctermbg=bg
-" 
+"
 " highlight Search          cterm=none    ctermbg=fg  ctermfg=bg
 " highlight IncSearch       cterm=reverse ctermbg=bg  ctermfg=fg
-" 
+"
 " highlight WildMenu        ctermfg=bg    ctermbg=fg
-" 
+"
 " highlight StatusLine      ctermfg=bg    ctermbg=fg
 " "highlight StatusLine      ctermbg=fg
 " "highlight StatusLine      ctermfg=236
 " highlight StatusLineNC    ctermfg=bg    ctermbg=245
 " "highlight StatusLineNC    ctermfg=236
-" 
+"
 " "highlight Visual ctermbg=13
 " "highlight Visual ctermfg=bg
-" 
+"
 " highlight CocInlayHint    ctermfg=59
 
 " }}}
