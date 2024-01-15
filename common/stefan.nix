@@ -91,6 +91,8 @@ in {
         zoxide
         zsh-prezto
 
+        graphviz
+
         gptfdisk
 
         starship

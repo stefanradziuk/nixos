@@ -184,6 +184,7 @@ in {
           jinja2
           mypkgs.rbql
           sympy
+          graphviz
         ] ++ (if useXserver then [
           i3-py
         ] else [])
