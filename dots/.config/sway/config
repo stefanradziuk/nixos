@@ -31,9 +31,9 @@ output * bg /home/stefan/pictures/wallpapers/cube.png fill
 # ++-------+DP-2|
 #  | eDP-1 |    |
 #  +-------+----+
-output eDP-1 resolution 1920x1080 position 640,1440
-output DP-6  resolution 2560x1440 position 0,0
-output DP-2  resolution 1080x1920 transform 90 position 2560,0
+# output eDP-1 resolution 1920x1080 position 640,1440
+output "Dell Inc. DELL S2721DS 7Q6VQ43" resolution 2560x1440 position 0,0
+output "Dell Inc. DELL P2419H 9S19J43"  transform 90 position 2560,0
 
 # laptop lid state
 set $laptop_screen eDP-1
