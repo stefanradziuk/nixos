@@ -137,6 +137,7 @@ in {
         ffmpeg
         mpv
         youtube-dl
+        yt-dlp
 
         sshfs
         rclone
