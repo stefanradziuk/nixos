@@ -67,7 +67,6 @@ in {
         gnumake
         gparted
         helix
-        imagemagick
         inkscape
         lsof
         # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
@@ -91,7 +90,9 @@ in {
         zoxide
         zsh-prezto
 
+        ghostscript_headless
         graphviz
+        imagemagick
 
         gptfdisk
 
