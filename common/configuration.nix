@@ -88,8 +88,10 @@ in {
     autoRepeatInterval = 25;
 
     # Configure keymap in X11
-    layout = "gb,pl";
-    xkbOptions = "grp:ctrls_toggle,caps:swapescape";
+    xkb = {
+      layout = "gb,pl";
+      options = "grp:ctrls_toggle,caps:swapescape";
+    };
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput = {
