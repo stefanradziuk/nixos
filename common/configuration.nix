@@ -71,11 +71,8 @@ in {
   services.xserver = {
     enable = useXserver;
 
-    displayManager = {
-      # sddm.enable = true;
-      startx.enable = true;
-      defaultSession = "none+i3";
-    };
+    # sddm.enable = true;
+    displayManager.startx.enable = true;
 
     windowManager.i3.enable = useXserver;
 
@@ -93,13 +90,16 @@ in {
       options = "grp:ctrls_toggle,caps:swapescape";
     };
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-        accelSpeed = "0.25";
-      };
+  };
+
+  services.displayManager.defaultSession = "none+i3";
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      naturalScrolling = true;
+      accelSpeed = "0.25";
     };
   };
 
