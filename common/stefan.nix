@@ -106,7 +106,7 @@ in {
         sumneko-lua-language-server
         haskell-language-server
         nodePackages.bash-language-server
-        nodePackages.pyright
+        nodePackages.coc-pyright
 
         linuxPackages_latest.perf
         flamegraph
@@ -137,7 +137,6 @@ in {
 
         ffmpeg
         mpv
-        youtube-dl
         yt-dlp
 
         sshfs

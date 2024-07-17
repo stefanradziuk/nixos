@@ -22,7 +22,7 @@ in {
   };
 
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     # XXX are any of these redundant?
     extraPackages = with pkgs; [
