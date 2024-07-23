@@ -141,8 +141,8 @@ exec wl-paste -t text --watch clipman store --no-persist
 exec_always blueman-applet
 
 # screenshot
-bindsym $mod+Shift+s exec grimshot copy window
-bindsym Print        exec XDG_SCREENSHOTS_DIR=$HOME/pictures/screenshots grimshot save window
+bindsym $mod+Shift+s exec grimshot copy anything
+bindsym Print        exec XDG_SCREENSHOTS_DIR=$HOME/pictures/screenshots grimshot save anything
 
 bindsym XF86AudioLowerVolume        exec pulsemixer --unmute --change-volume -5 && volume_notification
 bindsym XF86AudioRaiseVolume        exec pulsemixer --unmute --change-volume +5 && volume_notification
