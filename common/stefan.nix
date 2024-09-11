@@ -49,7 +49,7 @@ in {
       in [
         acpilight
         btop
-        cinnamon.nemo
+        nemo
         colorpicker
         ccrypt
         ddcutil
