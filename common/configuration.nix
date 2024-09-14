@@ -152,15 +152,6 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # The default sound server for most graphical sessions has been switched from
-  # PulseAudio to PipeWire. Users that want to keep PulseAudio will want to set
-  # services.pipewire.enable = false; and hardware.pulseaudio.enable = true;.
-  # There is currently no plan to fully deprecate and remove PulseAudio,
-  # however, PipeWire should generally be preferred for new installs.
-  # https://nixos.org/manual/nixos/unstable/release-notes.html
-  services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
-
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
