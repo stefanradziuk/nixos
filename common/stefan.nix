@@ -66,6 +66,7 @@ in {
         gnumake
         gparted
         helix
+        hyprpicker
         inkscape
         lsof
         # wait for https://github.com/NixOS/nixpkgs/pull/211135/ to be released
@@ -82,7 +83,6 @@ in {
         st
         texlive
         wtype
-        xcolor
         xdotool
         xorg.xeyes
         zathura
