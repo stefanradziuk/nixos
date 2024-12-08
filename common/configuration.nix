@@ -234,10 +234,13 @@ in {
   fonts.packages = with pkgs; [
     corefonts  # Microsoft fonts
     fira-mono
-    # XXX "FiraMono" doesn't install anything?
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Ubuntu" "UbuntuMono" ]; })
+    # XXX also "FiraMono"?
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
   ];
 

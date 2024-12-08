@@ -50,7 +50,6 @@ in {
         acpilight
         btop
         nemo
-        colorpicker
         ccrypt
         ddcutil
         diff-so-fancy
@@ -83,6 +82,7 @@ in {
         st
         texlive
         wtype
+        xcolor
         xdotool
         xorg.xeyes
         zathura
