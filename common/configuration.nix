@@ -47,6 +47,8 @@ in {
     kernelModules = [ "i2c-dev" ];
   };
 
+  systemd.coredump.enable = true;
+
   networking.networkmanager = {
     enable = true;
     dns = "none";
@@ -197,6 +199,7 @@ in {
         fd
         feh
         file
+        gdb
         git
         gnupg
         htop
