@@ -75,6 +75,7 @@ in {
         parallel
         psst
         pv
+        qimgv # img viewer
         rofi-wayland
         rofimoji
         shellcheck
