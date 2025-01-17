@@ -145,10 +145,6 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
@@ -189,7 +185,7 @@ in {
         };
       in [
         bat
-        exa
+        eza
         fd
         feh
         file
@@ -230,11 +226,13 @@ in {
   fonts.fonts = with pkgs; [
     corefonts  # Microsoft fonts
     fira-mono
-    # XXX "FiraMono" doesn't install anything?
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Ubuntu" "UbuntuMono" ]; })
+    # XXX also "FiraMono"?
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
     noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
+    noto-fonts-cjk-sans
   ];
 
   environment.variables.XCURSOR_SIZE = "32";

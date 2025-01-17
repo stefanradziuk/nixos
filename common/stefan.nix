@@ -48,8 +48,7 @@ in {
 
       in [
         acpilight
-        cinnamon.nemo
-        colorpicker
+        nemo
         ccrypt
         diff-so-fancy
         difftastic
@@ -106,7 +105,6 @@ in {
 
         clingo
 
-        teams
         xournalpp
         discord
         zoom-us
@@ -115,7 +113,6 @@ in {
 
         ffmpeg
         mpv
-        youtube-dl
 
         sshfs
         rclone
